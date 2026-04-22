@@ -3,6 +3,8 @@
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
+import { SplineScene } from '@/components/ui/SplineScene'
+import { Spotlight } from '@/components/ui/Spotlight'
 
 export default function Hero() {
   const { t } = useTranslation()
@@ -10,71 +12,81 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center bg-cream overflow-hidden"
+      className="relative min-h-screen flex items-center bg-black/[0.96] overflow-hidden"
     >
-      {/* Warm amber radial gradient decorations */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute -right-20 top-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full blur-3xl" style={{ backgroundColor: 'rgba(232, 164, 90, 0.10)' }} />
-        <div className="absolute right-40 top-1/4 w-[400px] h-[400px] rounded-full blur-2xl" style={{ backgroundColor: 'rgba(200, 135, 58, 0.06)' }} />
-        <div className="absolute -left-20 bottom-0 w-[300px] h-[300px] rounded-full blur-2xl" style={{ backgroundColor: 'rgba(237, 230, 216, 0.60)' }} />
-      </div>
+      <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="white" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-20">
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="font-body text-amber font-medium text-lg mb-3"
-        >
-          Hello, World 👋
-        </motion.p>
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-20">
+        <div className="flex flex-col md:flex-row items-center gap-8 lg:gap-12">
 
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="font-display font-bold text-5xl sm:text-6xl lg:text-7xl text-charcoal leading-tight mb-5"
-        >
-          {t('hero.greeting')}
-        </motion.h1>
+          {/* Left: text content */}
+          <div className="flex-1 flex flex-col items-start">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="font-body text-amber font-medium text-lg mb-3"
+            >
+              Hello, World 👋
+            </motion.p>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.35 }}
-          className="font-body text-xl text-bark font-medium mb-5"
-        >
-          {t('hero.subtitle')}
-        </motion.p>
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="font-display font-bold text-5xl sm:text-6xl lg:text-7xl text-white leading-tight mb-5"
+            >
+              {t('hero.greeting')}
+            </motion.h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="font-body text-muted text-lg leading-relaxed mb-10 max-w-2xl"
-        >
-          {t('hero.tagline')}
-        </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.35 }}
+              className="font-body text-xl text-neutral-300 font-medium mb-5"
+            >
+              {t('hero.subtitle')}
+            </motion.p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.65 }}
-          className="flex flex-wrap gap-4"
-        >
-          <a
-            href="#projects"
-            className="bg-amber hover:bg-amber-dark text-white font-body font-semibold text-sm px-8 py-3.5 rounded-full transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
-          >
-            {t('hero.viewWork')}
-          </a>
-          <a
-            href="/cv-placeholder.pdf"
-            className="border-2 border-amber text-amber hover:bg-amber hover:text-white font-body font-semibold text-sm px-8 py-3.5 rounded-full transition-all duration-200 hover:-translate-y-0.5"
-          >
-            {t('hero.downloadCV')}
-          </a>
-        </motion.div>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="font-body text-neutral-400 text-lg leading-relaxed mb-10 max-w-xl"
+            >
+              {t('hero.tagline')}
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.65 }}
+              className="flex flex-wrap gap-4"
+            >
+              <a
+                href="#projects"
+                className="bg-amber hover:bg-amber-dark text-white font-body font-semibold text-sm px-8 py-3.5 rounded-full transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
+              >
+                {t('hero.viewWork')}
+              </a>
+              <a
+                href="/cv-placeholder.pdf"
+                className="border-2 border-amber text-amber hover:bg-amber hover:text-white font-body font-semibold text-sm px-8 py-3.5 rounded-full transition-all duration-200 hover:-translate-y-0.5"
+              >
+                {t('hero.downloadCV')}
+              </a>
+            </motion.div>
+          </div>
+
+          {/* Right: 3D robot */}
+          <div className="flex-1 relative h-[350px] md:h-[500px] w-full">
+            <SplineScene
+              scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+              className="w-full h-full"
+            />
+          </div>
+
+        </div>
       </div>
 
       {/* Scroll indicator */}
@@ -88,7 +100,7 @@ export default function Hero() {
           animate={{ y: [0, 8, 0] }}
           transition={{ repeat: Infinity, duration: 1.8, ease: 'easeInOut' }}
         >
-          <ChevronDown className="text-muted" size={28} />
+          <ChevronDown className="text-neutral-400" size={28} />
         </motion.div>
       </motion.div>
     </section>
