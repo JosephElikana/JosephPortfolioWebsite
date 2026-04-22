@@ -3,7 +3,13 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
-import { Mail, CheckCircle2 } from 'lucide-react'
+import { Mail, CheckCircle2, Loader2 } from 'lucide-react'
+import emailjs from '@emailjs/browser'
+
+const SERVICE_ID = 'service_428swtk'
+const TEMPLATE_ID = 'template_q1u0ikg'
+const PUBLIC_KEY = 'EDYuDcZQn23UwLc31'
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 function LinkedinIcon({ size = 20, className = '' }: { size?: number; className?: string }) {
   return (
@@ -26,12 +32,39 @@ function GithubIcon({ size = 20, className = '' }: { size?: number; className?: 
 export default function Contact() {
   const { t } = useTranslation()
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [sendError, setSendError] = useState('')
+  const [emailError, setEmailError] = useState('')
   const [form, setForm] = useState({ name: '', email: '', message: '' })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSubmitted(true)
-    setForm({ name: '', email: '', message: '' })
+    if (!EMAIL_RE.test(form.email)) {
+      setEmailError(t('contact.invalidEmail'))
+      return
+    }
+    setEmailError('')
+    setSendError('')
+    setLoading(true)
+    try {
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          title: 'Portfolio Contact Form',
+          name: form.name,
+          email: form.email,
+          message: form.message,
+        },
+        PUBLIC_KEY
+      )
+      setSubmitted(true)
+      setForm({ name: '', email: '', message: '' })
+    } catch {
+      setSendError(t('contact.errorMessage'))
+    } finally {
+      setLoading(false)
+    }
   }
 
   const INFO_CARDS = [
@@ -145,10 +178,13 @@ export default function Contact() {
                     type="email"
                     required
                     value={form.email}
-                    onChange={(e) => setForm({ ...form, email: e.target.value })}
+                    onChange={(e) => { setForm({ ...form, email: e.target.value }); setEmailError('') }}
                     placeholder={t('contact.emailPlaceholder')}
-                    className="w-full font-body text-sm text-cream bg-white/[0.08] border border-white/20 rounded-lg px-4 py-3 focus:outline-none focus:border-amber transition-colors duration-200 placeholder:text-cream/35"
+                    className={`w-full font-body text-sm text-cream bg-white/[0.08] border rounded-lg px-4 py-3 focus:outline-none transition-colors duration-200 placeholder:text-cream/35 ${emailError ? 'border-red-400 focus:border-red-400' : 'border-white/20 focus:border-amber'}`}
                   />
+                  {emailError && (
+                    <p className="font-body text-xs text-red-400 mt-1">{emailError}</p>
+                  )}
                 </div>
                 <div>
                   <label className="font-body text-sm font-medium text-cream block mb-1.5">
@@ -165,10 +201,15 @@ export default function Contact() {
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-amber hover:bg-amber-dark text-white font-body font-semibold text-sm py-3.5 rounded-full transition-all duration-200 hover:shadow-md"
+                  disabled={loading}
+                  className="w-full flex items-center justify-center gap-2 bg-amber hover:bg-amber-dark disabled:opacity-60 disabled:cursor-not-allowed text-white font-body font-semibold text-sm py-3.5 rounded-full transition-all duration-200 hover:shadow-md"
                 >
-                  {t('contact.send')}
+                  {loading && <Loader2 size={16} className="animate-spin" />}
+                  {loading ? t('contact.sending') : t('contact.send')}
                 </button>
+                {sendError && (
+                  <p className="font-body text-xs text-red-400 text-center">{sendError}</p>
+                )}
               </form>
             )}
           </motion.div>

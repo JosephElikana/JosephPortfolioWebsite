@@ -21,15 +21,6 @@ export default function Hero() {
 
           {/* Left: text content */}
           <div className="flex-1 flex flex-col items-start">
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="font-body text-amber font-medium text-lg mb-3"
-            >
-              Hello, World 👋
-            </motion.p>
-
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -70,7 +61,8 @@ export default function Hero() {
                 {t('hero.viewWork')}
               </a>
               <a
-                href="/cv-placeholder.pdf"
+                href="/cv.pdf"
+                download="Joseph_Elikana_CV.pdf"
                 className="border-2 border-amber text-amber hover:bg-amber hover:text-white font-body font-semibold text-sm px-8 py-3.5 rounded-full transition-all duration-200 hover:-translate-y-0.5"
               >
                 {t('hero.downloadCV')}

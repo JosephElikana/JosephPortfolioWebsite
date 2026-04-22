@@ -59,7 +59,7 @@ const SKILL_CATEGORIES: { key: string; skills: Skill[] }[] = [
     skills: [
       { name: 'MySQL', icon: devicon('mysql/mysql-original.svg'), percent: 75 },
       { name: 'PostgreSQL', icon: devicon('postgresql/postgresql-original.svg'), percent: 70 },
-      { name: 'Oracle DB', icon: simpleicon('oracle'), percent: 55 },
+      { name: 'Oracle DB', icon: devicon('oracle/oracle-original.svg'), percent: 55 },
       { name: 'Firebase', icon: devicon('firebase/firebase-original.svg'), percent: 65 },
     ],
   },

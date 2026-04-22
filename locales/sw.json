@@ -18,7 +18,7 @@
   },
   "about": {
     "heading": "Kuhusu Mimi",
-    "bio1": "Mimi ni mhitimu wa Sayansi ya Kompyuta kutoka Chuo Kikuu Katoliki cha Mwenge (MoCU), nikiishi Tanzania. Safari yangu katika teknolojia ilianza na msingi imara wa kielimu na kukua kupitia uzoefu wa vitendo wa mafunzo, kujitolea, na miradi ya kujitegemea.",
+    "bio1": "Mimi ni mhitimu wa Sayansi ya Kompyuta kutoka Chuo Kikuu Katoliki cha Mwenge (MWECAU), nikiishi Tanzania. Safari yangu katika teknolojia ilianza na msingi imara wa kielimu na kukua kupitia uzoefu wa vitendo wa mafunzo, kujitolea, na miradi ya kujitegemea.",
     "bio2": "Nina shauku ya kujenga suluhisho za kidijitali ambazo zinatatua matatizo ya kweli — kuanzia mifumo ya wavuti na programu za simu hadi mawakala wa AI na mifumo ya otomatiki. Ninaamini kwamba programu nzuri si tu ya kufanya kazi, bali ina kusudi.",
     "bio3": "Nje ya kuandika msimbo, ninafurahia kuchunguza teknolojia mpya, hasa katika nafasi ya AI na otomatiki, na kutafuta njia za kuzitumia katika changamoto za biashara za kila siku.",
     "letsConnect": "Tuungane"
@@ -37,9 +37,9 @@
   "education": {
     "heading": "Elimu",
     "degree": "Shahada ya Kwanza ya Sayansi ya Kompyuta",
-    "institution": "Chuo Kikuu Katoliki cha Mwenge (MoCU)",
+    "institution": "Chuo Kikuu Katoliki cha Mwenge (MWECAU)",
     "location": "Moshi, Tanzania",
-    "period": "20XX – 20XX",
+    "period": "2021 – 2024",
     "highlights": "Misingi ya Sayansi ya Kompyuta, Uhandisi wa Programu, Mitandao, AI na Ujifunzaji wa Mashine, Mifumo ya Hifadhidata, Mradi wa Mwaka wa Mwisho",
     "highlightsLabel": "Mambo Muhimu:"
   },
@@ -49,15 +49,15 @@
     "volunteering": "Kujitolea",
     "freelance": "Kazi Huru",
     "intern2022Role": "Mafunzo ya Vitendo Shambani",
-    "intern2022Org": "Chuo Kikuu Katoliki cha Mwenge (MoCU) — Idara ya TEHAMA",
+    "intern2022Org": "Chuo Kikuu cha Ushirika cha Moshi (MoCU) — Idara ya TEHAMA",
     "intern2022Period": "Machi 2022 – Mei 2022",
     "intern2022Detail": "Alipata uzoefu wa vitendo katika uendeshaji na usaidizi wa TEHAMA ndani ya mazingira ya chuo kikuu.",
     "intern2023Role": "Mafunzo ya Vitendo Shambani",
-    "intern2023Org": "Chuo Kikuu Katoliki cha Mwenge (MoCU) — Idara ya TEHAMA",
+    "intern2023Org": "Chuo Kikuu cha Ushirika cha Moshi (MoCU) — Idara ya TEHAMA",
     "intern2023Period": "Machi 2023 – Mei 2023",
     "intern2023Detail": "Aliongeza ujuzi wa vitendo katika mifumo ya IT, mitandao, na usaidizi wa kiufundi.",
     "volunteerRole": "Mjitolea wa TEHAMA",
-    "volunteerOrg": "Chuo Kikuu Katoliki cha Mwenge (MoCU)",
+    "volunteerOrg": "Chuo Kikuu cha Ushirika cha Moshi (MoCU)",
     "volunteerPeriod": "Juni 2025 – Desemba 2025",
     "volunteerDetail": "Alisaidia uendeshaji wa TEHAMA na kuchangia ujuzi wa kiufundi kwa miradi na mifumo ya chuo kikuu.",
     "freelanceRole": "Mtengenezaji wa Programu Huru",
@@ -131,7 +131,10 @@
     "nameLabel": "Jina",
     "emailFieldLabel": "Barua Pepe",
     "messageLabel": "Ujumbe",
-    "sendAnother": "Tuma ujumbe mwingine"
+    "sendAnother": "Tuma ujumbe mwingine",
+    "sending": "Inatuma...",
+    "invalidEmail": "Tafadhali ingiza anwani sahihi ya barua pepe.",
+    "errorMessage": "Kuna hitilafu. Tafadhali jaribu tena au niandikie moja kwa moja."
   },
   "footer": {
     "copyright": "© 2025 Joseph Elikana. Haki zote zimehifadhiwa.",
