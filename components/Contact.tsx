@@ -64,30 +64,28 @@ export default function Contact() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.h2
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
           className="font-display font-bold text-4xl text-cream mb-16 text-center"
         >
           {t('contact.heading')}
         </motion.h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Info cards */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.1 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="space-y-4"
-          >
-            {INFO_CARDS.map(({ icon, label, value, href }) => (
-              <a
+          {/* Info cards — staggered slide from left */}
+          <div className="space-y-4">
+            {INFO_CARDS.map(({ icon, label, value, href }, i) => (
+              <motion.a
                 key={label}
                 href={href}
                 target={href.startsWith('http') ? '_blank' : undefined}
                 rel="noopener noreferrer"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.5, delay: i * 0.1, ease: 'easeOut' }}
                 className="flex items-center gap-4 bg-white/[0.07] backdrop-blur-xl rounded-card p-5 border border-white/15 hover:border-amber/50 hover:bg-white/[0.12] hover:shadow-[0_0_20px_rgba(200,135,58,0.15)] transition-all duration-300 group"
               >
                 <div className="p-2.5 rounded-lg bg-amber/20 shrink-0">{icon}</div>
@@ -99,16 +97,16 @@ export default function Contact() {
                     {value}
                   </p>
                 </div>
-              </a>
+              </motion.a>
             ))}
-          </motion.div>
+          </div>
 
-          {/* Contact form */}
+          {/* Contact form — slides from right */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: 30, scale: 0.97 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
             viewport={{ once: true, amount: 0.1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
           >
             {submitted ? (
               <div className="bg-white/[0.07] backdrop-blur-xl rounded-card p-8 border border-white/15 flex flex-col items-center justify-center h-full gap-4 text-center">

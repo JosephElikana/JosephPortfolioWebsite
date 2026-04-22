@@ -1,8 +1,7 @@
 'use client'
 
-import { useRef } from 'react'
 import { useTranslation } from 'react-i18next'
-import { motion, useInView } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { ExternalLink, Mail, Clock } from 'lucide-react'
 
 type ProjectCard = {
@@ -145,15 +144,14 @@ function ProjectGroup({
   delay: number
 }) {
   const { t } = useTranslation()
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: '-60px' })
 
   return (
-    <div ref={ref} className="mb-16">
+    <div className="mb-16">
       <motion.h3
         initial={{ opacity: 0, y: 20 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-        transition={{ duration: 0.5, delay }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.5, delay, ease: 'easeOut' }}
         className="font-display font-semibold text-2xl text-cream mb-8 flex items-center gap-3"
       >
         <span className="block w-8 h-0.5 bg-amber" />
@@ -164,9 +162,10 @@ function ProjectGroup({
         {projects.map((card, i) => (
           <motion.div
             key={card.titleKey}
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.5, delay: delay + i * 0.07 }}
+            initial={{ opacity: 0, y: 40, scale: 0.97 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.5, delay: delay + i * 0.07, ease: 'easeOut' }}
             className="h-full"
           >
             <ProjectCard card={card} />
@@ -179,8 +178,6 @@ function ProjectGroup({
 
 export default function Projects() {
   const { t } = useTranslation()
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
     <section id="projects" className="py-24 relative overflow-hidden bg-transparent">
@@ -191,10 +188,10 @@ export default function Projects() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.h2
-          ref={ref}
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
           className="font-display font-bold text-4xl text-cream mb-16 text-center"
         >
           {t('projects.heading')}

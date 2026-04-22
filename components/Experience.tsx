@@ -1,8 +1,7 @@
 'use client'
 
-import { useRef } from 'react'
 import { useTranslation } from 'react-i18next'
-import { motion, useInView } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { Briefcase, Calendar } from 'lucide-react'
 
 type ExperienceEntry = {
@@ -58,8 +57,6 @@ function badgeClass(typeKey: string) {
 
 export default function Experience() {
   const { t } = useTranslation()
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
     <section id="experience" className="py-24 relative overflow-hidden bg-transparent">
@@ -68,28 +65,45 @@ export default function Experience() {
       <div className="absolute bottom-0 right-0 w-[420px] h-[420px] bg-forest rounded-full blur-3xl opacity-15 pointer-events-none" />
       <div className="absolute top-1/2 -left-20 w-72 h-72 bg-amber-light rounded-full blur-3xl opacity-10 pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10" ref={ref}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
           className="font-display font-bold text-4xl text-cream mb-16 text-center"
         >
           {t('experience.heading')}
         </motion.h2>
 
         <div className="max-w-3xl mx-auto">
-          <div className="relative pl-8 border-l-2 border-amber space-y-8">
+          <div className="relative pl-8 space-y-8">
+            {/* Timeline line draws from top to bottom */}
+            <motion.div
+              className="absolute left-0 top-0 w-0.5 bg-amber"
+              initial={{ height: 0 }}
+              whileInView={{ height: '100%' }}
+              viewport={{ once: true, amount: 0.05 }}
+              transition={{ duration: 1.4, ease: 'easeOut', delay: 0.1 }}
+            />
+
             {ENTRIES.map((entry, index) => (
               <motion.div
                 key={entry.roleKey}
-                initial={{ opacity: 0, x: -20 }}
-                animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                initial={{ opacity: 0, x: -30, scale: 0.98 }}
+                whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.55, delay: index * 0.1, ease: 'easeOut' }}
                 className="relative"
               >
-                {/* Timeline dot */}
-                <div className="absolute -left-[9px] top-5 w-4 h-4 bg-amber rounded-full border-2 border-charcoal" />
+                {/* Timeline dot pops in with spring */}
+                <motion.div
+                  className="absolute -left-[9px] top-5 w-4 h-4 bg-amber rounded-full border-2 border-charcoal"
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.35, delay: index * 0.1 + 0.25, ease: [0.34, 1.56, 0.64, 1] }}
+                />
 
                 <div className="bg-white/5 backdrop-blur-xl border border-white/15 rounded-xl p-6 hover:border-amber/40 hover:bg-white/10 transition-all duration-300 ml-4">
                   <div className="flex items-start justify-between gap-4 flex-wrap mb-3">

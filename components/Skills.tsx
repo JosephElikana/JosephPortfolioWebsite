@@ -166,10 +166,10 @@ export default function Skills() {
           {SKILL_CATEGORIES.map(({ key, skills }, catIndex) => (
             <motion.div
               key={key}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 40, scale: 0.97 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.6, delay: catIndex * 0.07 }}
+              transition={{ duration: 0.6, delay: catIndex * 0.07, ease: 'easeOut' }}
               className="bg-white/[0.07] backdrop-blur-md border border-white/15 rounded-xl p-6 hover:border-amber/40 hover:bg-white/[0.12] transition-all duration-300"
             >
               <h3 className="font-body font-semibold text-amber-light text-sm uppercase tracking-wider mb-4">
