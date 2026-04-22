@@ -196,7 +196,7 @@ Create `locales/en.json`:
   },
   "about": {
     "heading": "About Me",
-    "bio1": "I am a Computer Science graduate from Mwenge Catholic University (MoCU), based in Tanzania. My journey in tech started with a strong academic foundation and grew into real-world experience through internships, volunteering, and freelance projects.",
+    "bio1": "I am a Computer Science graduate from Mwenge Catholic University (MWECAU), based in Tanzania. My journey in tech started with a strong academic foundation and grew into real-world experience through internships, volunteering, and freelance projects.",
     "bio2": "I am passionate about building digital solutions that solve real problems — from custom web systems and mobile apps to intelligent AI agents and workflow automations. I believe that great software is not just functional, it is purposeful.",
     "bio3": "Outside of coding, I enjoy exploring new technologies, especially in the AI and automation space, and finding ways to apply them to everyday business challenges.",
     "letsConnect": "Let's Connect"
@@ -215,9 +215,9 @@ Create `locales/en.json`:
   "education": {
     "heading": "Education",
     "degree": "Bachelor of Science in Computer Science",
-    "institution": "Mwenge Catholic University (MoCU)",
+    "institution": "Mwenge Catholic University",
     "location": "Moshi, Tanzania",
-    "period": "20XX – 20XX",
+    "period": "2021 – 2024",
     "highlights": "Computer Science fundamentals, Software Engineering, Networking, AI & Machine Learning, Database Systems, Final Year Project"
   },
   "experience": {
@@ -226,15 +226,15 @@ Create `locales/en.json`:
     "volunteering": "Volunteering",
     "freelance": "Freelance",
     "intern2022Role": "Field Practical Training",
-    "intern2022Org": "Mwenge Catholic University (MoCU) — ICT Department",
+    "intern2022Org": "Moshi Co-operative University (MoCU) — ICT Department",
     "intern2022Period": "March 2022 – May 2022",
     "intern2022Detail": "Gained hands-on experience in ICT operations and support within the university environment.",
     "intern2023Role": "Field Practical Training",
-    "intern2023Org": "Mwenge Catholic University (MoCU) — ICT Department",
+    "intern2023Org": "Moshi Co-operative University (MoCU) — ICT Department",
     "intern2023Period": "March 2023 – May 2023",
     "intern2023Detail": "Deepened practical skills in IT systems, networking, and technical support.",
     "volunteerRole": "ICT Volunteer",
-    "volunteerOrg": "Mwenge Catholic University (MoCU)",
+    "volunteerOrg": "Moshi Co-operative University (MoCU)",
     "volunteerPeriod": "June 2025 – December 2025",
     "volunteerDetail": "Supported ICT operations and contributed technical skills to university projects and systems.",
     "freelanceRole": "Freelance Software Developer",

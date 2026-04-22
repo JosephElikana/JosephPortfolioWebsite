@@ -12,7 +12,11 @@
       "Bash(cmd /c \"rmdir /s /q \\\\\"C:\\\\Users\\\\J CODE\\\\Desktop\\\\JosephPortfolioWebsite\\\\portfolio-temp\\\\\"\")",
       "Bash(git init *)",
       "Bash(git commit -m ' *)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(npx tsc *)",
+      "Bash(node -e \"require\\('./locales/en.json'\\); require\\('./locales/sw.json'\\); console.log\\('Both JSON files are valid'\\);\")",
+      "Bash(node *)"
     ]
   }
 }
