@@ -221,22 +221,22 @@ Do NOT link directly to Make.com or Relevance AI tool URLs.
 
 ## Current Status
 
-- [ ] Project scaffolded
-- [ ] Tailwind config with custom colors set up
-- [ ] i18next configured with en.json and sw.json
-- [ ] Navbar component built
-- [ ] Hero component built
-- [ ] About component built
-- [ ] Skills component built
-- [ ] Education component built
-- [ ] Experience component built
-- [ ] Projects component built
-- [ ] Certifications component built
-- [ ] Contact component built
-- [ ] Footer component built
-- [ ] Mobile responsiveness checked
-- [ ] Framer Motion animations added to all sections
-- [ ] Bilingual toggle tested (EN/SW)
+- [x ] Project scaffolded
+- [ x] Tailwind config with custom colors set up
+- [ x] i18next configured with en.json and sw.json
+- [ x] Navbar component built
+- [ x] Hero component built
+- [ x] About component built
+- [x ] Skills component built
+- [ x] Education component built
+- [ x] Experience component built
+- [ x] Projects component built
+- [ x] Certifications component built
+- [ x] Contact component built
+- [ x] Footer component built
+- [x ] Mobile responsiveness checked
+- [x ] Framer Motion animations added to all sections
+- [ x] Bilingual toggle tested (EN/SW)
 - [ ] Deployed to Vercel
 
 Update this checklist as you complete each section.
@@ -251,3 +251,71 @@ Update this checklist as you complete each section.
 - More GitHub project links to be added once repos are ready
 - Social media links (beyond LinkedIn and GitHub) to be added later
 - A contact form backend (e.g. Resend, EmailJS, or Formspree) can be added in a future phase
+- 
+
+
+## Custom Components & Third-Party Prompts (21st.dev)
+
+### How to Use Component Prompts
+- Component prompts are stored as `.txt` files inside the `/additionalComponents` folder
+- When asked to implement a component, first read the relevant `.txt` file
+- Implement exactly what the prompt describes — do not simplify or skip details
+- After implementing, adapt the component to match this project's design system
+
+### Folder Structure for Prompts
+/prompts
+  navbar.txt
+  hero.txt
+  cards.txt
+  buttons.txt
+  (add more as needed)
+
+### Implementation Rules
+1. Read the .txt prompt file from the `/additionalComponents` folder fully before writing any code
+2. Implement the component exactly as described in the prompt
+3. After implementation, replace all hardcoded colors with the project's
+   Tailwind custom colors (cream, amber, charcoal, bark, sand, forest)
+4. Replace all fonts with Playfair Display (headings) and DM Sans (body)
+5. Remove any color that does not belong to the project design system
+6. Never keep purple gradients, blue accents, or generic AI-looking styles
+   that come from the original component — replace them with amber and cream
+
+### Animation Rules
+- If the component has animations, keep them but slow them down slightly
+  to match the warm and professional feel of this site
+- All animation durations should be between 300ms and 600ms
+- Use ease-in-out or custom bezier curves — never linear for UI animations
+- Wrap all Framer Motion animations with useInView so they only
+  trigger when the component enters the viewport
+
+### Responsiveness Rules
+- Every component from 21st.dev must be made fully responsive
+- Mobile breakpoint: below 768px — single column, full width
+- Tablet breakpoint: 768px–1024px — adjust grid/flex as needed
+- Desktop: 1024px and above — full intended layout
+- Test layout at all three breakpoints before considering it done
+
+### Tailwind Adaptation Rules
+- Always replace hardcoded hex values with Tailwind custom color classes
+- Always replace generic font classes with font-display or font-body
+- Remove any Tailwind classes that conflict with the project design system
+- If the component uses a library not already in the project,
+  ask before installing it
+
+### Component Quality Checklist
+After implementing any component from a prompt, verify:
+- [ ] Colors match the project palette (no foreign colors left behind)
+- [ ] Fonts are Playfair Display and DM Sans only
+- [ ] Component is fully responsive on mobile, tablet, desktop
+- [ ] Hover states and transitions work smoothly
+- [ ] Framer Motion animations trigger on scroll (not on page load)
+- [ ] No console errors or TypeScript errors
+- [ ] Component fits visually with the rest of the page
+
+### What Claude Should NEVER Do With Prompt Components
+- Never use a font that is not Playfair Display or DM Sans
+- Never install a new npm package without asking first
+- Never break the existing layout of the page when inserting a new component
+- Never ignore TypeScript errors and leave them unresolved
+- Never place a component without checking how it looks next to
+  the sections above and below it

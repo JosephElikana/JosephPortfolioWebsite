@@ -1,0 +1,31 @@
+[    6264ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[    6517ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[    7929ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://cdn.simpleicons.org/oracle:0
+[   12422ms] [WARNING] updating from  114 to  122 @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   14216ms] [ERROR] THREE.WebGLRenderer: A WebGL context could not be created. Reason:  Could not create a WebGL context, VENDOR = 0x8086, DEVICE = 0x0126, GL_VENDOR = Google Inc. (Intel), GL_RENDERER = ANGLE (Intel, Intel(R) HD Graphics 3000 Direct3D9Ex vs_3_0 ps_3_0, igdumd64.dll -9.17.10.4459), GL_VERSION = 9.17.10.4459, Sandboxed = no, Optimus = no, AMD switchable = no, Reset notification strategy = 0x8252, ErrorMessage = BindToCurrentSequence failed: . @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[   14337ms] [WARNING] THREE.WebGLRenderer: WebGLMultipleRenderTargets can only be used with WebGL2 or WEBGL_draw_buffers extension. @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   14339ms] [WARNING] WebGL: INVALID_ENUM: framebufferTexture2D: invalid attachment @ http://localhost:3000/_next/static/chunks/node_modules_%40splinetool_runtime_build_runtime_0f_-eux.js:12169
+[   14342ms] [ERROR] WebGLRenderer: Floating point depth texture requires WebGL2. @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[   14342ms] [WARNING] THREE.WebGLRenderer: Use UnsignedShortType or UnsignedIntType for DepthFormat DepthTexture. @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   14427ms] [ERROR] %o
+
+%s TypeError: s1.clearBufferfv is not a function
+    at Lb.clear (http://localhost:3000/_next/static/chunks/node_modules_%40splinetool_runtime_build_runtime_0f_-eux.js:49874:130)
+    at Eu.render (http://localhost:3000/_next/static/chunks/node_modules_%40splinetool_runtime_build_runtime_0f_-eux.js:48332:91)
+    at Mb.render (http://localhost:3000/_next/static/chunks/node_modules_%40splinetool_runtime_build_runtime_0f_-eux.js:48428:69)
+    at xg.render (http://localhost:3000/_next/static/chunks/node_modules_%40splinetool_runtime_build_runtime_0f_-eux.js:49399:29)
+    at Lb.renderSplineScene (http://localhost:3000/_next/static/chunks/node_modules_%40splinetool_runtime_build_runtime_0f_-eux.js:49978:79)
+    at sU.render (http://localhost:3000/_next/static/chunks/node_modules_%40splinetool_runtime_build_runtime_0f_-eux.js:71547:32)
+    at sU.start (http://localhost:3000/_next/static/chunks/node_modules_%40splinetool_runtime_build_runtime_0f_-eux.js:71655:74)
+    at async sU.load (http://localhost:3000/_next/static/chunks/node_modules_%40splinetool_runtime_build_runtime_0f_-eux.js:71581:9)
+    at async t (http://localhost:3000/_next/static/chunks/node_modules_00vzmjg._.js:1991:17) The above error occurred in the <Unknown> component. It was handled by the <SplineErrorBoundary> error boundary. @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:1998
+[   14640ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   14856ms] [LOG] [Fast Refresh] done in 325ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   14962ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   14976ms] [LOG] [Fast Refresh] done in 118ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  134404ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  134433ms] [LOG] [Fast Refresh] done in 132ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  167810ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  167816ms] [LOG] [Fast Refresh] done in 118ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  209701ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  209711ms] [LOG] [Fast Refresh] done in 116ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431

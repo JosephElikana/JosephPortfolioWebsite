@@ -16,7 +16,16 @@
       "Bash(git commit *)",
       "Bash(npx tsc *)",
       "Bash(node -e \"require\\('./locales/en.json'\\); require\\('./locales/sw.json'\\); console.log\\('Both JSON files are valid'\\);\")",
-      "Bash(node *)"
+      "Bash(node *)",
+      "Bash(git checkout *)",
+      "Bash(git diff *)",
+      "Bash(git show *)",
+      "Bash(grep -r \"transpilePackages\\\\|serverExternalPackages\" next.config.ts)",
+      "Bash(ls node_modules/@splinetool)",
+      "mcp__plugin_playwright_playwright__browser_navigate",
+      "mcp__plugin_playwright_playwright__browser_take_screenshot",
+      "mcp__plugin_playwright_playwright__browser_evaluate",
+      "mcp__plugin_playwright_playwright__browser_snapshot"
     ]
   }
 }

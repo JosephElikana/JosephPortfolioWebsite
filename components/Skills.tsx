@@ -1,61 +1,158 @@
 'use client'
 
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { motion, useInView } from 'framer-motion'
 
-const SKILL_CATEGORIES = [
+const devicon = (slug: string) =>
+  `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${slug}`
+
+const simpleicon = (slug: string) => `https://cdn.simpleicons.org/${slug}`
+
+interface Skill {
+  name: string
+  icon: string | null
+  percent: number
+}
+
+const SKILL_CATEGORIES: { key: string; skills: Skill[] }[] = [
   {
     key: 'skills.programmingLanguages',
-    skills: ['C', 'C++', 'Java', 'Python', 'JavaScript', 'TypeScript'],
+    skills: [
+      { name: 'C', icon: devicon('c/c-original.svg'), percent: 60 },
+      { name: 'C++', icon: devicon('cplusplus/cplusplus-original.svg'), percent: 55 },
+      { name: 'Java', icon: devicon('java/java-original.svg'), percent: 70 },
+      { name: 'Python', icon: devicon('python/python-original.svg'), percent: 75 },
+      { name: 'JavaScript', icon: devicon('javascript/javascript-original.svg'), percent: 85 },
+      { name: 'TypeScript', icon: devicon('typescript/typescript-original.svg'), percent: 80 },
+    ],
   },
   {
     key: 'skills.frontend',
-    skills: ['HTML5', 'CSS3', 'React.js', 'Next.js', 'Tailwind CSS', 'Responsive Design'],
+    skills: [
+      { name: 'HTML5', icon: devicon('html5/html5-original.svg'), percent: 90 },
+      { name: 'CSS3', icon: devicon('css3/css3-original.svg'), percent: 85 },
+      { name: 'React.js', icon: devicon('react/react-original.svg'), percent: 80 },
+      { name: 'Next.js', icon: devicon('nextjs/nextjs-original.svg'), percent: 75 },
+      { name: 'Tailwind CSS', icon: devicon('tailwindcss/tailwindcss-original.svg'), percent: 85 },
+      { name: 'Responsive Design', icon: null, percent: 80 },
+    ],
   },
   {
     key: 'skills.backend',
-    skills: ['Node.js', 'Express.js', 'REST APIs', 'PHP'],
+    skills: [
+      { name: 'Node.js', icon: devicon('nodejs/nodejs-original.svg'), percent: 70 },
+      { name: 'Express.js', icon: devicon('express/express-original.svg'), percent: 68 },
+      { name: 'REST APIs', icon: null, percent: 75 },
+      { name: 'PHP', icon: devicon('php/php-original.svg'), percent: 60 },
+    ],
   },
   {
     key: 'skills.mobile',
-    skills: ['React Native', 'Android (Java)'],
+    skills: [
+      { name: 'React Native', icon: devicon('react/react-original.svg'), percent: 65 },
+      { name: 'Android (Java)', icon: devicon('android/android-original.svg'), percent: 60 },
+    ],
   },
   {
     key: 'skills.databases',
-    skills: ['MySQL', 'PostgreSQL', 'Oracle DB', 'Firebase'],
+    skills: [
+      { name: 'MySQL', icon: devicon('mysql/mysql-original.svg'), percent: 75 },
+      { name: 'PostgreSQL', icon: devicon('postgresql/postgresql-original.svg'), percent: 70 },
+      { name: 'Oracle DB', icon: simpleicon('oracle'), percent: 55 },
+      { name: 'Firebase', icon: devicon('firebase/firebase-original.svg'), percent: 65 },
+    ],
   },
   {
     key: 'skills.csCore',
     skills: [
-      'Data Structures & Algorithms',
-      'Computer Networking',
-      'Cybersecurity',
-      'Operating Systems',
-      'Software Engineering',
-      'Machine Learning',
-      'Artificial Intelligence',
-      'Cloud Computing',
+      { name: 'Data Structures & Algorithms', icon: null, percent: 70 },
+      { name: 'Computer Networking', icon: null, percent: 65 },
+      { name: 'Cybersecurity', icon: null, percent: 60 },
+      { name: 'Operating Systems', icon: null, percent: 65 },
+      { name: 'Software Engineering', icon: null, percent: 75 },
+      { name: 'Machine Learning', icon: null, percent: 60 },
+      { name: 'Artificial Intelligence', icon: null, percent: 65 },
+      { name: 'Cloud Computing', icon: null, percent: 55 },
     ],
   },
   {
     key: 'skills.aiAutomation',
     skills: [
-      'Make.com',
-      'n8n',
-      'Relevance AI',
-      'Zapier',
-      'Claude (Anthropic)',
-      'Prompt Engineering',
-      'AI Agent Development',
-      'Vibe Coding',
+      { name: 'Make.com', icon: simpleicon('make'), percent: 80 },
+      { name: 'n8n', icon: simpleicon('n8n'), percent: 75 },
+      { name: 'Relevance AI', icon: null, percent: 80 },
+      { name: 'Zapier', icon: simpleicon('zapier'), percent: 70 },
+      { name: 'Claude (Anthropic)', icon: simpleicon('anthropic'), percent: 85 },
+      { name: 'Prompt Engineering', icon: null, percent: 85 },
+      { name: 'AI Agent Development', icon: null, percent: 80 },
+      { name: 'Vibe Coding', icon: null, percent: 85 },
     ],
   },
   {
     key: 'skills.devTools',
-    skills: ['Git', 'GitHub', 'VS Code', 'Postman', 'Linux', 'Docker (basic)'],
+    skills: [
+      { name: 'Git', icon: devicon('git/git-original.svg'), percent: 85 },
+      { name: 'GitHub', icon: devicon('github/github-original.svg'), percent: 85 },
+      { name: 'VS Code', icon: devicon('vscode/vscode-original.svg'), percent: 90 },
+      { name: 'Postman', icon: devicon('postman/postman-original.svg'), percent: 80 },
+      { name: 'Linux', icon: devicon('linux/linux-original.svg'), percent: 70 },
+      { name: 'Docker (basic)', icon: devicon('docker/docker-original.svg'), percent: 45 },
+    ],
   },
 ]
+
+function SkillCard({
+  skill,
+  isInView,
+  delay,
+}: {
+  skill: Skill
+  isInView: boolean
+  delay: number
+}) {
+  const [imgError, setImgError] = useState(false)
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.85 }}
+      animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.85 }}
+      transition={{ duration: 0.35, delay }}
+      className="group flex flex-col items-center gap-2 cursor-default"
+    >
+      {/* Circle icon + hover overlay */}
+      <div className="relative w-16 h-16 rounded-full border-2 border-border bg-white flex items-center justify-center overflow-hidden hover:border-amber hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5">
+        {/* Icon or letter */}
+        {skill.icon && !imgError ? (
+          <img
+            src={skill.icon}
+            alt={skill.name}
+            width={38}
+            height={38}
+            className="w-[38px] h-[38px] object-contain p-0.5"
+            onError={() => setImgError(true)}
+          />
+        ) : (
+          <span className="font-body font-bold text-amber text-lg leading-none">
+            {skill.name[0].toUpperCase()}
+          </span>
+        )}
+
+        {/* Hover overlay — reveals percentage */}
+        <div className="absolute inset-0 rounded-full bg-amber flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+          <span className="text-white font-body font-bold text-sm leading-none">
+            {skill.percent}%
+          </span>
+        </div>
+      </div>
+
+      {/* Skill name */}
+      <p className="font-body text-xs text-bark text-center leading-tight max-w-[72px]">
+        {skill.name}
+      </p>
+    </motion.div>
+  )
+}
 
 export default function Skills() {
   const { t } = useTranslation()
@@ -80,20 +177,20 @@ export default function Skills() {
               key={key}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-              transition={{ duration: 0.6, delay: catIndex * 0.05 }}
+              transition={{ duration: 0.6, delay: catIndex * 0.07 }}
               className="bg-sand rounded-card p-6 border border-border"
             >
               <h3 className="font-body font-semibold text-charcoal text-sm uppercase tracking-wider mb-4">
                 {t(key)}
               </h3>
-              <div className="flex flex-wrap gap-2">
-                {skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="font-body text-sm text-bark bg-cream border border-border px-3 py-1 rounded-full hover:border-amber hover:text-amber transition-all duration-200 cursor-default"
-                  >
-                    {skill}
-                  </span>
+              <div className="grid grid-cols-3 sm:grid-cols-4 gap-4">
+                {skills.map((skill, skillIndex) => (
+                  <SkillCard
+                    key={skill.name}
+                    skill={skill}
+                    isInView={isInView}
+                    delay={catIndex * 0.07 + skillIndex * 0.04}
+                  />
                 ))}
               </div>
             </motion.div>
