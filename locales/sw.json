@@ -1,0 +1,138 @@
+{
+  "nav": {
+    "home": "Nyumbani",
+    "about": "Kuhusu",
+    "skills": "Ujuzi",
+    "experience": "Uzoefu",
+    "projects": "Miradi",
+    "certifications": "Vyeti",
+    "contact": "Wasiliana",
+    "hireMe": "Niajiri"
+  },
+  "hero": {
+    "greeting": "Habari, Mimi ni Joseph Elikana",
+    "subtitle": "Mtengenezaji wa Programu · Mtaalamu wa AI · Mfanyakazi Huru",
+    "tagline": "Kutengeneza suluhisho za kidijitali zenye athari tangu 2024. Ninabobea katika kuunda programu za wavuti, programu za simu, mifumo ya otomatiki, na bidhaa za kidijitali zinazozalisha mapato zinazochanganya ubunifu na mkakati.",
+    "viewWork": "Angalia Kazi Zangu",
+    "downloadCV": "Pakua CV"
+  },
+  "about": {
+    "heading": "Kuhusu Mimi",
+    "bio1": "Mimi ni mhitimu wa Sayansi ya Kompyuta kutoka Chuo Kikuu Katoliki cha Mwenge (MoCU), nikiishi Tanzania. Safari yangu katika teknolojia ilianza na msingi imara wa kielimu na kukua kupitia uzoefu wa vitendo wa mafunzo, kujitolea, na miradi ya kujitegemea.",
+    "bio2": "Nina shauku ya kujenga suluhisho za kidijitali ambazo zinatatua matatizo ya kweli — kuanzia mifumo ya wavuti na programu za simu hadi mawakala wa AI na mifumo ya otomatiki. Ninaamini kwamba programu nzuri si tu ya kufanya kazi, bali ina kusudi.",
+    "bio3": "Nje ya kuandika msimbo, ninafurahia kuchunguza teknolojia mpya, hasa katika nafasi ya AI na otomatiki, na kutafuta njia za kuzitumia katika changamoto za biashara za kila siku.",
+    "letsConnect": "Tuungane"
+  },
+  "skills": {
+    "heading": "Ujuzi na Teknolojia",
+    "programmingLanguages": "Lugha za Programu",
+    "frontend": "Maendeleo ya Frontend",
+    "backend": "Maendeleo ya Backend",
+    "mobile": "Maendeleo ya Simu",
+    "databases": "Hifadhidata",
+    "csCore": "Misingi ya Sayansi ya Kompyuta",
+    "aiAutomation": "Zana za AI na Otomatiki",
+    "devTools": "Zana za Msanidi"
+  },
+  "education": {
+    "heading": "Elimu",
+    "degree": "Shahada ya Kwanza ya Sayansi ya Kompyuta",
+    "institution": "Chuo Kikuu Katoliki cha Mwenge (MoCU)",
+    "location": "Moshi, Tanzania",
+    "period": "20XX – 20XX",
+    "highlights": "Misingi ya Sayansi ya Kompyuta, Uhandisi wa Programu, Mitandao, AI na Ujifunzaji wa Mashine, Mifumo ya Hifadhidata, Mradi wa Mwaka wa Mwisho"
+  },
+  "experience": {
+    "heading": "Uzoefu",
+    "internship": "Mafunzo",
+    "volunteering": "Kujitolea",
+    "freelance": "Kazi Huru",
+    "intern2022Role": "Mafunzo ya Vitendo Shambani",
+    "intern2022Org": "Chuo Kikuu Katoliki cha Mwenge (MoCU) — Idara ya TEHAMA",
+    "intern2022Period": "Machi 2022 – Mei 2022",
+    "intern2022Detail": "Alipata uzoefu wa vitendo katika uendeshaji na usaidizi wa TEHAMA ndani ya mazingira ya chuo kikuu.",
+    "intern2023Role": "Mafunzo ya Vitendo Shambani",
+    "intern2023Org": "Chuo Kikuu Katoliki cha Mwenge (MoCU) — Idara ya TEHAMA",
+    "intern2023Period": "Machi 2023 – Mei 2023",
+    "intern2023Detail": "Aliongeza ujuzi wa vitendo katika mifumo ya IT, mitandao, na usaidizi wa kiufundi.",
+    "volunteerRole": "Mjitolea wa TEHAMA",
+    "volunteerOrg": "Chuo Kikuu Katoliki cha Mwenge (MoCU)",
+    "volunteerPeriod": "Juni 2025 – Desemba 2025",
+    "volunteerDetail": "Alisaidia uendeshaji wa TEHAMA na kuchangia ujuzi wa kiufundi kwa miradi na mifumo ya chuo kikuu.",
+    "freelanceRole": "Mtengenezaji wa Programu Huru",
+    "freelanceOrg": "Kujitegemea / Wateja Mbalimbali",
+    "freelancePeriod": "2025 – Sasa",
+    "freelanceDetail1": "Alijenga programu za wavuti maalum kwa watu binafsi na mashirika",
+    "freelanceDetail2": "Alitengeneza Mfumo wa Usimamizi wa Mali za Kanisa ulioingizwa na nambari za QR, kuruhusu ufuatiliaji wa wakati halisi na kuhifadhi kumbukumbu za mali za kanisa",
+    "freelanceDetail3": "Alitoa zana za otomatiki za AI na suluhisho za mtiririko wa kazi kwa wateja wa biashara"
+  },
+  "projects": {
+    "heading": "Miradi",
+    "webGroup": "Miradi ya Wavuti na Mifumo",
+    "aiGroup": "Miradi ya AI na Otomatiki",
+    "viewGitHub": "Angalia kwenye GitHub",
+    "requestDemo": "Omba Onyesho",
+    "comingSoon": "Inakuja Hivi Karibuni",
+    "church": {
+      "title": "Church Asset Management System",
+      "description": "Mfumo wa usimamizi wa mali wa wavuti kwa shirika la kanisa, uliounganishwa na uchanganuzi wa nambari za QR kwa ufuatiliaji wa wakati halisi na kuhifadhi kumbukumbu za mali."
+    },
+    "portfolio": {
+      "title": "Portfolio Website",
+      "description": "Tovuti hii ya kibinafsi ya portfolio iliyojengwa kwa Next.js, Tailwind CSS, na Framer Motion. Ina lugha mbili (Kiingereza/Kiswahili) na michoro laini na muundo wa kitaalamu wenye joto."
+    },
+    "placeholder": {
+      "title": "Mradi wa Programu ya Wavuti",
+      "description": "Ongeza maelezo ya mradi wako hapa."
+    },
+    "leadQual": {
+      "title": "Lead Qualification Automation",
+      "description": "Mtiririko wa kazi wa kuhitimu viongozi uliojengwa kwenye Make.com ambao hupanga na kuelekeza viongozi vinavyoingia kiotomatiki kulingana na vigezo maalum."
+    },
+    "companyAnalyzer": {
+      "title": "Company Analyzer Tool",
+      "description": "Zana inayotumia AI iliyojengwa kwenye Relevance AI inayochanganua wasifu wa kampuni, sekta, na data muhimu kutengeneza ripoti za akili kwa mauzo na utafiti."
+    },
+    "prospectIntel": {
+      "title": "Prospect Intelligence Tool",
+      "description": "Zana ya Relevance AI inayochukua URL ya LinkedIn ya mtarajiwa na jina la kampuni na kurudisha wasifu wa kina — muktadha wa historia, jukumu, na pointi muhimu za mawasiliano."
+    },
+    "customerSupport": {
+      "title": "Customer Support Intelligence Agent",
+      "description": "Wakala wa AI uliojengwa kwenye Relevance AI ambao hutumia zana za Company Analyzer na Prospect Intelligence pamoja kutengeneza ripoti kamili ya mtarajiwa."
+    },
+    "automation5": {
+      "title": "Automation Project 5",
+      "description": "Inakuja hivi karibuni. Otomatiki ya hali ya juu ya mtiririko wa kazi iliyoundwa kutatua tatizo maalum la biashara."
+    },
+    "automation6": {
+      "title": "Automation Project 6",
+      "description": "Inakuja hivi karibuni. Zana inayotumia AI iliyoundwa kurahisisha shughuli za biashara."
+    }
+  },
+  "certifications": {
+    "heading": "Vyeti",
+    "cert1Title": "AI kwa Wanaoanza",
+    "cert2Title": "AI kwa Wataalamu wa Biashara",
+    "issuer": "HP Foundation",
+    "year": "Mwaka TBC"
+  },
+  "contact": {
+    "heading": "Tufanye Kazi Pamoja",
+    "emailLabel": "Barua Pepe",
+    "linkedinLabel": "LinkedIn",
+    "githubLabel": "GitHub",
+    "namePlaceholder": "Jina Lako",
+    "emailPlaceholder": "Barua Pepe Yako",
+    "messagePlaceholder": "Niambie kuhusu mradi wako...",
+    "send": "Tuma Ujumbe",
+    "success": "Asante! Ujumbe wako umepokelewa. Nitawasiliana nawe hivi karibuni.",
+    "nameLabel": "Jina",
+    "emailFieldLabel": "Barua Pepe",
+    "messageLabel": "Ujumbe"
+  },
+  "footer": {
+    "copyright": "© 2025 Joseph Elikana. Haki zote zimehifadhiwa.",
+    "backToTop": "Rudi juu"
+  }
+}

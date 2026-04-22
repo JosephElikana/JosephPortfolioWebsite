@@ -1,0 +1,138 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "experience": "Experience",
+    "projects": "Projects",
+    "certifications": "Certifications",
+    "contact": "Contact",
+    "hireMe": "Hire Me"
+  },
+  "hero": {
+    "greeting": "Hi, I'm Joseph Elikana",
+    "subtitle": "Software Developer · AI Automation Specialist · Freelancer",
+    "tagline": "Designing impactful digital solutions since 2024. I specialize in creating high quality web apps, mobile apps, workflow automations, and revenue-generating digital products that blend creativity with strategy.",
+    "viewWork": "View My Work",
+    "downloadCV": "Download CV"
+  },
+  "about": {
+    "heading": "About Me",
+    "bio1": "I am a Computer Science graduate from Mwenge Catholic University (MoCU), based in Tanzania. My journey in tech started with a strong academic foundation and grew into real-world experience through internships, volunteering, and freelance projects.",
+    "bio2": "I am passionate about building digital solutions that solve real problems — from custom web systems and mobile apps to intelligent AI agents and workflow automations. I believe that great software is not just functional, it is purposeful.",
+    "bio3": "Outside of coding, I enjoy exploring new technologies, especially in the AI and automation space, and finding ways to apply them to everyday business challenges.",
+    "letsConnect": "Let's Connect"
+  },
+  "skills": {
+    "heading": "Skills & Technologies",
+    "programmingLanguages": "Programming Languages",
+    "frontend": "Frontend Development",
+    "backend": "Backend Development",
+    "mobile": "Mobile Development",
+    "databases": "Databases",
+    "csCore": "Computer Science Core",
+    "aiAutomation": "AI & Automation Tools",
+    "devTools": "Developer Tools"
+  },
+  "education": {
+    "heading": "Education",
+    "degree": "Bachelor of Science in Computer Science",
+    "institution": "Mwenge Catholic University (MoCU)",
+    "location": "Moshi, Tanzania",
+    "period": "20XX – 20XX",
+    "highlights": "Computer Science fundamentals, Software Engineering, Networking, AI & Machine Learning, Database Systems, Final Year Project"
+  },
+  "experience": {
+    "heading": "Experience",
+    "internship": "Internship",
+    "volunteering": "Volunteering",
+    "freelance": "Freelance",
+    "intern2022Role": "Field Practical Training",
+    "intern2022Org": "Mwenge Catholic University (MoCU) — ICT Department",
+    "intern2022Period": "March 2022 – May 2022",
+    "intern2022Detail": "Gained hands-on experience in ICT operations and support within the university environment.",
+    "intern2023Role": "Field Practical Training",
+    "intern2023Org": "Mwenge Catholic University (MoCU) — ICT Department",
+    "intern2023Period": "March 2023 – May 2023",
+    "intern2023Detail": "Deepened practical skills in IT systems, networking, and technical support.",
+    "volunteerRole": "ICT Volunteer",
+    "volunteerOrg": "Mwenge Catholic University (MoCU)",
+    "volunteerPeriod": "June 2025 – December 2025",
+    "volunteerDetail": "Supported ICT operations and contributed technical skills to university projects and systems.",
+    "freelanceRole": "Freelance Software Developer",
+    "freelanceOrg": "Self-employed / Various Clients",
+    "freelancePeriod": "2025 – Present",
+    "freelanceDetail1": "Built custom web applications for individuals and organizations",
+    "freelanceDetail2": "Developed a Church Asset Management System integrated with QR codes, enabling real-time tracking and record-keeping of church assets and their status",
+    "freelanceDetail3": "Delivered AI automation tools and workflow solutions for business clients"
+  },
+  "projects": {
+    "heading": "Projects",
+    "webGroup": "Web & Systems Projects",
+    "aiGroup": "AI & Automation Projects",
+    "viewGitHub": "View on GitHub",
+    "requestDemo": "Request Demo",
+    "comingSoon": "Coming Soon",
+    "church": {
+      "title": "Church Asset Management System",
+      "description": "A web-based asset management system for a church organization, integrated with QR code scanning for real-time tracking and record-keeping of assets and their operational status."
+    },
+    "portfolio": {
+      "title": "Portfolio Website",
+      "description": "This personal portfolio website built with Next.js, Tailwind CSS, and Framer Motion. Bilingual (English/Swahili) with smooth animations and warm professional design."
+    },
+    "placeholder": {
+      "title": "Web App Project",
+      "description": "Add your project description here."
+    },
+    "leadQual": {
+      "title": "Lead Qualification Automation",
+      "description": "An intelligent lead qualification workflow built on Make.com that automatically scores and routes incoming leads based on custom criteria, saving hours of manual sales work."
+    },
+    "companyAnalyzer": {
+      "title": "Company Analyzer Tool",
+      "description": "An AI-powered tool built on Relevance AI that analyzes a company's profile, industry, and key data points to generate structured intelligence reports for sales and research."
+    },
+    "prospectIntel": {
+      "title": "Prospect Intelligence Tool",
+      "description": "A Relevance AI tool that takes a prospect's LinkedIn URL and company name and returns a detailed profile — background, role context, and key talking points for outreach."
+    },
+    "customerSupport": {
+      "title": "Customer Support Intelligence Agent",
+      "description": "An AI agent built on Relevance AI that uses the Company Analyzer and Prospect Intelligence tools together to generate a full prospect report and interview preparation summary."
+    },
+    "automation5": {
+      "title": "Automation Project 5",
+      "description": "Coming soon. An advanced workflow automation built to solve a specific business problem."
+    },
+    "automation6": {
+      "title": "Automation Project 6",
+      "description": "Coming soon. An AI-powered tool designed to streamline business operations."
+    }
+  },
+  "certifications": {
+    "heading": "Certifications",
+    "cert1Title": "AI for Beginners",
+    "cert2Title": "AI for Business Professionals",
+    "issuer": "HP Foundation",
+    "year": "Year TBC"
+  },
+  "contact": {
+    "heading": "Let's Work Together",
+    "emailLabel": "Email",
+    "linkedinLabel": "LinkedIn",
+    "githubLabel": "GitHub",
+    "namePlaceholder": "Your Name",
+    "emailPlaceholder": "Your Email",
+    "messagePlaceholder": "Tell me about your project...",
+    "send": "Send Message",
+    "success": "Thank you! Your message has been received. I'll get back to you soon.",
+    "nameLabel": "Name",
+    "emailFieldLabel": "Email",
+    "messageLabel": "Message"
+  },
+  "footer": {
+    "copyright": "© 2025 Joseph Elikana. All rights reserved.",
+    "backToTop": "Back to top"
+  }
+}
