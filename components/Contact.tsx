@@ -1,8 +1,8 @@
 'use client'
 
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { motion, useInView } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { Mail, CheckCircle2 } from 'lucide-react'
 
 function LinkedinIcon({ size = 20, className = '' }: { size?: number; className?: string }) {
@@ -25,8 +25,6 @@ function GithubIcon({ size = 20, className = '' }: { size?: number; className?: 
 
 export default function Contact() {
   const { t } = useTranslation()
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: '-80px' })
   const [submitted, setSubmitted] = useState(false)
   const [form, setForm] = useState({ name: '', email: '', message: '' })
 
@@ -58,16 +56,19 @@ export default function Contact() {
   ]
 
   return (
-    <section id="contact" className="py-24 bg-sand relative overflow-hidden">
-      {/* Gradient transitions matching adjacent dark sections */}
-      <div className="absolute top-0 left-0 right-0 h-28 bg-gradient-to-b from-charcoal to-transparent pointer-events-none" />
-      <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-b from-transparent to-charcoal pointer-events-none" />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10" ref={ref}>
+    <section id="contact" className="py-24 relative overflow-hidden">
+      {/* Ambient blobs */}
+      <div className="absolute -top-32 right-1/4 w-[480px] h-[480px] bg-amber rounded-full blur-3xl opacity-15 pointer-events-none" />
+      <div className="absolute -bottom-32 -left-20 w-[420px] h-[420px] bg-forest rounded-full blur-3xl opacity-15 pointer-events-none" />
+      <div className="absolute top-1/2 -right-20 w-80 h-80 bg-amber-light rounded-full blur-3xl opacity-10 pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
-          className="font-display font-bold text-4xl text-charcoal mb-16 text-center"
+          className="font-display font-bold text-4xl text-cream mb-16 text-center"
         >
           {t('contact.heading')}
         </motion.h2>
@@ -76,7 +77,8 @@ export default function Contact() {
           {/* Info cards */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             className="space-y-4"
           >
@@ -86,14 +88,14 @@ export default function Contact() {
                 href={href}
                 target={href.startsWith('http') ? '_blank' : undefined}
                 rel="noopener noreferrer"
-                className="flex items-center gap-4 bg-cream rounded-card p-5 border border-border hover:border-amber hover:shadow-md transition-all duration-300 group"
+                className="flex items-center gap-4 bg-white/[0.07] backdrop-blur-xl rounded-card p-5 border border-white/15 hover:border-amber/50 hover:bg-white/[0.12] hover:shadow-[0_0_20px_rgba(200,135,58,0.15)] transition-all duration-300 group"
               >
                 <div className="p-2.5 rounded-lg bg-amber/20 shrink-0">{icon}</div>
                 <div>
-                  <p className="font-body text-xs text-muted uppercase tracking-wide mb-0.5">
+                  <p className="font-body text-xs text-cream/50 uppercase tracking-wide mb-0.5">
                     {label}
                   </p>
-                  <p className="font-body text-sm text-bark group-hover:text-amber transition-colors duration-200">
+                  <p className="font-body text-sm text-cream/80 group-hover:text-amber transition-colors duration-200">
                     {value}
                   </p>
                 </div>
@@ -104,13 +106,14 @@ export default function Contact() {
           {/* Contact form */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             {submitted ? (
-              <div className="bg-cream rounded-card p-8 border border-border flex flex-col items-center justify-center h-full gap-4 text-center">
+              <div className="bg-white/[0.07] backdrop-blur-xl rounded-card p-8 border border-white/15 flex flex-col items-center justify-center h-full gap-4 text-center">
                 <CheckCircle2 className="text-forest" size={48} />
-                <p className="font-body text-bark text-lg">{t('contact.success')}</p>
+                <p className="font-body text-cream/80 text-lg">{t('contact.success')}</p>
                 <button
                   onClick={() => setSubmitted(false)}
                   className="text-amber font-body text-sm underline hover:text-amber-dark transition-colors duration-200"
@@ -121,10 +124,10 @@ export default function Contact() {
             ) : (
               <form
                 onSubmit={handleSubmit}
-                className="bg-cream rounded-card p-8 border border-border space-y-5"
+                className="bg-white/[0.07] backdrop-blur-xl rounded-card p-8 border border-white/15 space-y-5"
               >
                 <div>
-                  <label className="font-body text-sm font-medium text-charcoal block mb-1.5">
+                  <label className="font-body text-sm font-medium text-cream block mb-1.5">
                     {t('contact.nameLabel')}
                   </label>
                   <input
@@ -133,11 +136,11 @@ export default function Contact() {
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
                     placeholder={t('contact.namePlaceholder')}
-                    className="w-full font-body text-sm text-charcoal bg-sand border border-border rounded-lg px-4 py-3 focus:outline-none focus:border-amber transition-colors duration-200 placeholder:text-muted"
+                    className="w-full font-body text-sm text-cream bg-white/[0.08] border border-white/20 rounded-lg px-4 py-3 focus:outline-none focus:border-amber transition-colors duration-200 placeholder:text-cream/35"
                   />
                 </div>
                 <div>
-                  <label className="font-body text-sm font-medium text-charcoal block mb-1.5">
+                  <label className="font-body text-sm font-medium text-cream block mb-1.5">
                     {t('contact.emailFieldLabel')}
                   </label>
                   <input
@@ -146,11 +149,11 @@ export default function Contact() {
                     value={form.email}
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
                     placeholder={t('contact.emailPlaceholder')}
-                    className="w-full font-body text-sm text-charcoal bg-sand border border-border rounded-lg px-4 py-3 focus:outline-none focus:border-amber transition-colors duration-200 placeholder:text-muted"
+                    className="w-full font-body text-sm text-cream bg-white/[0.08] border border-white/20 rounded-lg px-4 py-3 focus:outline-none focus:border-amber transition-colors duration-200 placeholder:text-cream/35"
                   />
                 </div>
                 <div>
-                  <label className="font-body text-sm font-medium text-charcoal block mb-1.5">
+                  <label className="font-body text-sm font-medium text-cream block mb-1.5">
                     {t('contact.messageLabel')}
                   </label>
                   <textarea
@@ -159,7 +162,7 @@ export default function Contact() {
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
                     placeholder={t('contact.messagePlaceholder')}
-                    className="w-full font-body text-sm text-charcoal bg-sand border border-border rounded-lg px-4 py-3 focus:outline-none focus:border-amber transition-colors duration-200 placeholder:text-muted resize-none"
+                    className="w-full font-body text-sm text-cream bg-white/[0.08] border border-white/20 rounded-lg px-4 py-3 focus:outline-none focus:border-amber transition-colors duration-200 placeholder:text-cream/35 resize-none"
                   />
                 </div>
                 <button

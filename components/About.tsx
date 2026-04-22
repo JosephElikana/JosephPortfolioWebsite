@@ -15,16 +15,14 @@ export default function About() {
   }
 
   return (
-    <section id="about" className="py-24 bg-sand relative overflow-hidden">
-      {/* Gradient transition into dark sections below */}
-      <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-b from-transparent to-charcoal pointer-events-none" />
+    <section id="about" className="py-24 bg-transparent relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10" ref={ref}>
         <motion.h2
           variants={variants}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
           transition={{ duration: 0.6 }}
-          className="font-display font-bold text-4xl text-charcoal mb-16 text-center"
+          className="font-display font-bold text-4xl text-cream mb-16 text-center"
         >
           {t('about.heading')}
         </motion.h2>
@@ -39,7 +37,7 @@ export default function About() {
             className="flex justify-center"
           >
             <div className="relative">
-              <div className="w-64 h-64 sm:w-72 sm:h-72 rounded-full flex items-center justify-center shadow-lg border-4 border-amber" style={{ background: 'linear-gradient(135deg, #EDE6D8 0%, #FAF6F0 100%)' }}>
+              <div className="w-64 h-64 sm:w-72 sm:h-72 rounded-full flex items-center justify-center shadow-lg border-4 border-amber bg-white/5 backdrop-blur-sm">
                 <span className="font-display font-bold text-7xl text-amber">JE</span>
               </div>
               {/* Decorative ring */}
@@ -55,13 +53,13 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="space-y-5"
           >
-            <p className="font-body text-bark leading-relaxed text-lg">
+            <p className="font-body text-cream/75 leading-relaxed text-lg">
               {t('about.bio1')}
             </p>
-            <p className="font-body text-bark leading-relaxed text-lg">
+            <p className="font-body text-cream/75 leading-relaxed text-lg">
               {t('about.bio2')}
             </p>
-            <p className="font-body text-bark leading-relaxed text-lg">
+            <p className="font-body text-cream/75 leading-relaxed text-lg">
               {t('about.bio3')}
             </p>
             <div className="pt-4">

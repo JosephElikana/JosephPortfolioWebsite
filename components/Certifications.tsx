@@ -16,7 +16,7 @@ export default function Certifications() {
   const isInView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="certifications" className="py-24 relative overflow-hidden bg-charcoal">
+    <section id="certifications" className="py-24 relative overflow-hidden bg-transparent">
       {/* Ambient blobs */}
       <div className="absolute -top-20 left-1/3 w-[480px] h-[480px] bg-amber rounded-full blur-3xl opacity-20 pointer-events-none" />
       <div className="absolute -bottom-20 right-1/4 w-[380px] h-[380px] bg-forest rounded-full blur-3xl opacity-15 pointer-events-none" />

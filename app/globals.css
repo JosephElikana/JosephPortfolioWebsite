@@ -13,6 +13,7 @@
   --color-forest: #4A7C59;
   --color-border: #D8CDB8;
   --color-hero-bg: #0A0A0A;
+  --color-muted-foreground: #9ca3af;
 
   /* Font families — reference CSS vars injected by next/font in layout.tsx */
   --font-display: var(--font-playfair), Georgia, serif;

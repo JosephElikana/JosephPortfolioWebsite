@@ -11,7 +11,7 @@ export default function Education() {
   const isInView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="education" className="py-24 relative overflow-hidden bg-charcoal">
+    <section id="education" className="py-24 relative overflow-hidden bg-transparent">
       {/* Ambient blobs */}
       <div className="absolute -top-32 -right-32 w-[500px] h-[500px] bg-amber rounded-full blur-3xl opacity-20 pointer-events-none" />
       <div className="absolute -bottom-32 -left-32 w-[400px] h-[400px] bg-forest rounded-full blur-3xl opacity-15 pointer-events-none" />

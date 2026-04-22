@@ -62,7 +62,7 @@ export default function Experience() {
   const isInView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="experience" className="py-24 relative overflow-hidden bg-charcoal">
+    <section id="experience" className="py-24 relative overflow-hidden bg-transparent">
       {/* Ambient blobs */}
       <div className="absolute top-0 left-1/4 w-[480px] h-[480px] bg-amber rounded-full blur-3xl opacity-20 pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[420px] h-[420px] bg-forest rounded-full blur-3xl opacity-15 pointer-events-none" />

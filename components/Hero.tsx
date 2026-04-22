@@ -105,7 +105,7 @@ export default function Hero() {
       </motion.div>
 
       {/* Gradient fade transition to next section */}
-      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-hero-bg to-sand pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-hero-bg to-charcoal pointer-events-none" />
     </section>
   )
 }

@@ -183,7 +183,7 @@ export default function Projects() {
   const isInView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="projects" className="py-24 relative overflow-hidden bg-charcoal">
+    <section id="projects" className="py-24 relative overflow-hidden bg-transparent">
       {/* Ambient blobs */}
       <div className="absolute -top-20 right-1/4 w-[500px] h-[500px] bg-amber rounded-full blur-3xl opacity-20 pointer-events-none" />
       <div className="absolute top-1/2 -right-20 w-[400px] h-[400px] bg-forest rounded-full blur-3xl opacity-15 pointer-events-none" />

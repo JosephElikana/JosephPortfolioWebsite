@@ -8,19 +8,22 @@ import Projects from '@/components/Projects'
 import Certifications from '@/components/Certifications'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
+import InfiniteGridBackground from '@/components/ui/the-infinite-grid'
 
 export default function Home() {
   return (
     <main>
       <Navbar />
       <Hero />
-      <About />
-      <Skills />
-      <Education />
-      <Experience />
-      <Projects />
-      <Certifications />
-      <Contact />
+      <InfiniteGridBackground>
+        <About />
+        <Skills />
+        <Education />
+        <Experience />
+        <Projects />
+        <Certifications />
+        <Contact />
+      </InfiniteGridBackground>
       <Footer />
     </main>
   )

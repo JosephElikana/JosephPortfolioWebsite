@@ -1,8 +1,8 @@
 'use client'
 
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { motion, useInView } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 const devicon = (slug: string) =>
   `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${slug}`
@@ -102,27 +102,18 @@ const SKILL_CATEGORIES: { key: string; skills: Skill[] }[] = [
   },
 ]
 
-function SkillCard({
-  skill,
-  isInView,
-  delay,
-}: {
-  skill: Skill
-  isInView: boolean
-  delay: number
-}) {
+function SkillCard({ skill, delay }: { skill: Skill; delay: number }) {
   const [imgError, setImgError] = useState(false)
 
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.85 }}
-      animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.85 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 0.35, delay }}
       className="group flex flex-col items-center gap-2 cursor-default"
     >
-      {/* Circle icon + hover overlay */}
-      <div className="relative w-16 h-16 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm flex items-center justify-center overflow-hidden hover:border-amber/50 hover:shadow-[0_0_16px_rgba(200,135,58,0.3)] transition-all duration-300 hover:-translate-y-0.5">
-        {/* Icon or letter */}
+      <div className="relative w-16 h-16 rounded-full border border-white/25 bg-white/10 backdrop-blur-sm flex items-center justify-center overflow-hidden hover:border-amber/60 hover:shadow-[0_0_16px_rgba(200,135,58,0.35)] transition-all duration-300 hover:-translate-y-0.5">
         {skill.icon && !imgError ? (
           <img
             src={skill.icon}
@@ -137,17 +128,13 @@ function SkillCard({
             {skill.name[0].toUpperCase()}
           </span>
         )}
-
-        {/* Hover overlay — reveals percentage */}
         <div className="absolute inset-0 rounded-full bg-amber/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200">
           <span className="text-white font-body font-bold text-sm leading-none">
             {skill.percent}%
           </span>
         </div>
       </div>
-
-      {/* Skill name */}
-      <p className="font-body text-xs text-white/60 text-center leading-tight max-w-[72px]">
+      <p className="font-body text-xs text-white/70 text-center leading-tight max-w-[72px]">
         {skill.name}
       </p>
     </motion.div>
@@ -156,22 +143,19 @@ function SkillCard({
 
 export default function Skills() {
   const { t } = useTranslation()
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="skills" className="py-24 relative overflow-hidden bg-charcoal">
-      {/* Gradient transition from About section above */}
-      <div className="absolute top-0 left-0 right-0 h-28 bg-gradient-to-b from-sand to-transparent pointer-events-none" />
+    <section id="skills" className="py-24 relative overflow-hidden">
       {/* Ambient blobs */}
-      <div className="absolute -top-20 -left-20 w-96 h-96 bg-amber rounded-full blur-3xl opacity-10 pointer-events-none" />
-      <div className="absolute top-1/3 right-0 w-80 h-80 bg-forest rounded-full blur-3xl opacity-10 pointer-events-none" />
+      <div className="absolute -top-20 -left-20 w-96 h-96 bg-amber rounded-full blur-3xl opacity-15 pointer-events-none" />
+      <div className="absolute top-1/3 right-0 w-80 h-80 bg-forest rounded-full blur-3xl opacity-15 pointer-events-none" />
       <div className="absolute bottom-0 left-1/3 w-72 h-72 bg-amber-light rounded-full blur-3xl opacity-10 pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10" ref={ref}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
           className="font-display font-bold text-4xl text-cream mb-16 text-center"
         >
@@ -183,9 +167,10 @@ export default function Skills() {
             <motion.div
               key={key}
               initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.6, delay: catIndex * 0.07 }}
-              className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6 hover:border-amber/30 hover:bg-white/10 transition-all duration-300"
+              className="bg-white/[0.07] backdrop-blur-md border border-white/15 rounded-xl p-6 hover:border-amber/40 hover:bg-white/[0.12] transition-all duration-300"
             >
               <h3 className="font-body font-semibold text-amber-light text-sm uppercase tracking-wider mb-4">
                 {t(key)}
@@ -195,7 +180,6 @@ export default function Skills() {
                   <SkillCard
                     key={skill.name}
                     skill={skill}
-                    isInView={isInView}
                     delay={catIndex * 0.07 + skillIndex * 0.04}
                   />
                 ))}
