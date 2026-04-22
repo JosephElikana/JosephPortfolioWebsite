@@ -98,14 +98,14 @@ export default function Hero() {
       >
         <motion.div
           animate={{ y: [0, 8, 0] }}
-          transition={{ repeat: Infinity, duration: 1.8, ease: 'easeInOut' }}
+          transition={{ repeat: Infinity, duration: 0.6, ease: 'easeInOut' }}
         >
           <ChevronDown className="text-muted" size={28} />
         </motion.div>
       </motion.div>
 
       {/* Gradient fade transition to next section */}
-      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-transparent to-sand pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-hero-bg to-sand pointer-events-none" />
     </section>
   )
 }
