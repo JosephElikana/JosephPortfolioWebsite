@@ -12,7 +12,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center bg-black/[0.96] overflow-hidden"
+      className="relative min-h-screen flex items-center bg-hero-bg overflow-hidden"
     >
       <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="white" />
 
@@ -43,7 +43,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.35 }}
-              className="font-body text-xl text-neutral-300 font-medium mb-5"
+              className="font-body text-xl text-sand font-medium mb-5"
             >
               {t('hero.subtitle')}
             </motion.p>
@@ -52,7 +52,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="font-body text-neutral-400 text-lg leading-relaxed mb-10 max-w-xl"
+              className="font-body text-muted text-lg leading-relaxed mb-10 max-w-xl"
             >
               {t('hero.tagline')}
             </motion.p>
@@ -100,9 +100,12 @@ export default function Hero() {
           animate={{ y: [0, 8, 0] }}
           transition={{ repeat: Infinity, duration: 1.8, ease: 'easeInOut' }}
         >
-          <ChevronDown className="text-neutral-400" size={28} />
+          <ChevronDown className="text-muted" size={28} />
         </motion.div>
       </motion.div>
+
+      {/* Gradient fade transition to next section */}
+      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-transparent to-sand pointer-events-none" />
     </section>
   )
 }
