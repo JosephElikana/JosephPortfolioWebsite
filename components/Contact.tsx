@@ -58,8 +58,11 @@ export default function Contact() {
   ]
 
   return (
-    <section id="contact" className="py-24 bg-sand">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
+    <section id="contact" className="py-24 bg-sand relative overflow-hidden">
+      {/* Gradient transitions matching adjacent dark sections */}
+      <div className="absolute top-0 left-0 right-0 h-28 bg-gradient-to-b from-charcoal to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-b from-transparent to-charcoal pointer-events-none" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10" ref={ref}>
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
@@ -72,8 +75,8 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Info cards */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             className="space-y-4"
           >
@@ -85,7 +88,7 @@ export default function Contact() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 bg-cream rounded-card p-5 border border-border hover:border-amber hover:shadow-md transition-all duration-300 group"
               >
-                <div className="p-2.5 rounded-lg shrink-0" style={{ backgroundColor: 'rgba(200, 135, 58, 0.10)' }}>{icon}</div>
+                <div className="p-2.5 rounded-lg bg-amber/20 shrink-0">{icon}</div>
                 <div>
                   <p className="font-body text-xs text-muted uppercase tracking-wide mb-0.5">
                     {label}
@@ -100,8 +103,8 @@ export default function Contact() {
 
           {/* Contact form */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             {submitted ? (

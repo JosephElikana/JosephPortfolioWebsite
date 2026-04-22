@@ -66,7 +66,7 @@ export default function Footer() {
               <span className="font-display font-bold text-xl text-amber">JE</span>
               <span className="font-display font-semibold text-cream text-sm">Joseph Elikana</span>
             </div>
-            <p className="font-body text-xs leading-relaxed" style={{ color: 'rgba(250, 246, 240, 0.50)' }}>
+            <p className="font-body text-xs leading-relaxed text-cream/50">
               {t('footer.copyright')}
             </p>
           </div>
@@ -77,8 +77,7 @@ export default function Footer() {
               <a
                 key={key}
                 href={href}
-                className="font-body text-sm hover:text-amber transition-colors duration-200"
-                style={{ color: 'rgba(250, 246, 240, 0.60)' }}
+                className="font-body text-sm text-cream/60 hover:text-amber transition-colors duration-200"
               >
                 {t(key)}
               </a>
@@ -94,8 +93,7 @@ export default function Footer() {
                 target={href.startsWith('http') ? '_blank' : undefined}
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="hover:text-amber transition-colors duration-200"
-                style={{ color: 'rgba(250, 246, 240, 0.50)' }}
+                className="text-cream/50 hover:text-amber transition-colors duration-200"
               >
                 {icon}
               </a>
@@ -103,16 +101,15 @@ export default function Footer() {
             <button
               onClick={scrollToTop}
               aria-label={t('footer.backToTop')}
-              className="ml-2 p-2 rounded-full transition-all duration-200 hover:bg-amber hover:text-white"
-              style={{ backgroundColor: 'rgba(200, 135, 58, 0.10)', color: '#C8873A' }}
+              className="ml-2 p-2 rounded-full bg-amber/10 text-amber transition-all duration-200 hover:bg-amber hover:text-white"
             >
               <ArrowUp size={16} />
             </button>
           </div>
         </div>
 
-        <div className="pt-6 text-center" style={{ borderTop: '1px solid rgba(250, 246, 240, 0.10)' }}>
-          <p className="font-body text-xs" style={{ color: 'rgba(250, 246, 240, 0.30)' }}>
+        <div className="pt-6 text-center border-t border-cream/10">
+          <p className="font-body text-xs text-cream/30">
             Built with Next.js, Tailwind CSS &amp; Framer Motion
           </p>
         </div>

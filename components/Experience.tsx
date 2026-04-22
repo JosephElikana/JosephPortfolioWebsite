@@ -48,19 +48,32 @@ const ENTRIES: ExperienceEntry[] = [
   },
 ]
 
+function badgeClass(typeKey: string) {
+  if (typeKey === 'experience.internship')
+    return 'bg-amber/15 text-amber border-amber/25'
+  if (typeKey === 'experience.volunteering')
+    return 'bg-forest/15 text-forest border-forest/25'
+  return 'bg-white/10 text-cream border-white/20'
+}
+
 export default function Experience() {
   const { t } = useTranslation()
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="experience" className="py-24 bg-cream">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
+    <section id="experience" className="py-24 relative overflow-hidden bg-charcoal">
+      {/* Ambient blobs */}
+      <div className="absolute top-0 left-1/4 w-[480px] h-[480px] bg-amber rounded-full blur-3xl opacity-20 pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[420px] h-[420px] bg-forest rounded-full blur-3xl opacity-15 pointer-events-none" />
+      <div className="absolute top-1/2 -left-20 w-72 h-72 bg-amber-light rounded-full blur-3xl opacity-10 pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10" ref={ref}>
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
-          className="font-display font-bold text-4xl text-charcoal mb-16 text-center"
+          className="font-display font-bold text-4xl text-cream mb-16 text-center"
         >
           {t('experience.heading')}
         </motion.h2>
@@ -76,55 +89,36 @@ export default function Experience() {
                 className="relative"
               >
                 {/* Timeline dot */}
-                <div className="absolute -left-[9px] top-5 w-4 h-4 bg-amber rounded-full border-2 border-cream" />
+                <div className="absolute -left-[9px] top-5 w-4 h-4 bg-amber rounded-full border-2 border-charcoal" />
 
-                <div className="bg-sand rounded-card p-6 border border-border hover:border-amber transition-all duration-300 hover:shadow-md ml-4">
+                <div className="bg-white/5 backdrop-blur-xl border border-white/15 rounded-xl p-6 hover:border-amber/40 hover:bg-white/10 transition-all duration-300 ml-4">
                   <div className="flex items-start justify-between gap-4 flex-wrap mb-3">
                     <div className="flex items-start gap-3">
-                      <div className="p-2 rounded-lg mt-0.5" style={{ backgroundColor: 'rgba(200, 135, 58, 0.10)' }}>
+                      <div className="p-2.5 rounded-lg mt-0.5 bg-amber/20">
                         <Briefcase className="text-amber" size={16} />
                       </div>
                       <div>
-                        <h3 className="font-body font-semibold text-charcoal">
+                        <h3 className="font-body font-semibold text-cream">
                           {t(entry.roleKey)}
                         </h3>
-                        <p className="font-body text-sm text-bark mt-0.5">
+                        <p className="font-body text-sm text-white/60 mt-0.5">
                           {t(entry.orgKey)}
                         </p>
                       </div>
                     </div>
-                    <span
-                      className={`font-body text-xs font-medium px-3 py-1 rounded-full border`}
-                      style={{
-                        backgroundColor: entry.typeKey === 'experience.internship'
-                          ? 'rgba(200, 135, 58, 0.10)'
-                          : entry.typeKey === 'experience.volunteering'
-                          ? 'rgba(74, 124, 89, 0.10)'
-                          : 'rgba(44, 36, 22, 0.10)',
-                        color: entry.typeKey === 'experience.internship'
-                          ? 'rgb(200, 135, 58)'
-                          : entry.typeKey === 'experience.volunteering'
-                          ? 'rgb(74, 124, 89)'
-                          : 'rgb(44, 36, 22)',
-                        borderColor: entry.typeKey === 'experience.internship'
-                          ? 'rgba(200, 135, 58, 0.20)'
-                          : entry.typeKey === 'experience.volunteering'
-                          ? 'rgba(74, 124, 89, 0.20)'
-                          : 'rgba(44, 36, 22, 0.20)',
-                      }}
-                    >
+                    <span className={`font-body text-xs font-medium px-3 py-1 rounded-full border ${badgeClass(entry.typeKey)}`}>
                       {t(entry.typeKey)}
                     </span>
                   </div>
 
-                  <div className="flex items-center gap-1.5 text-muted text-xs font-body mb-4 ml-9">
+                  <div className="flex items-center gap-1.5 text-white/40 text-xs font-body mb-4 ml-9">
                     <Calendar size={12} />
                     <span>{t(entry.periodKey)}</span>
                   </div>
 
                   <ul className="ml-9 space-y-1.5">
                     {entry.detailKeys.map((dk) => (
-                      <li key={dk} className="font-body text-sm text-bark flex gap-2">
+                      <li key={dk} className="font-body text-sm text-white/70 flex gap-2">
                         <span className="text-amber mt-1.5 shrink-0">•</span>
                         <span>{t(dk)}</span>
                       </li>

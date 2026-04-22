@@ -121,7 +121,7 @@ function SkillCard({
       className="group flex flex-col items-center gap-2 cursor-default"
     >
       {/* Circle icon + hover overlay */}
-      <div className="relative w-16 h-16 rounded-full border-2 border-border bg-white flex items-center justify-center overflow-hidden hover:border-amber hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5">
+      <div className="relative w-16 h-16 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm flex items-center justify-center overflow-hidden hover:border-amber/50 hover:shadow-[0_0_16px_rgba(200,135,58,0.3)] transition-all duration-300 hover:-translate-y-0.5">
         {/* Icon or letter */}
         {skill.icon && !imgError ? (
           <img
@@ -133,13 +133,13 @@ function SkillCard({
             onError={() => setImgError(true)}
           />
         ) : (
-          <span className="font-body font-bold text-amber text-lg leading-none">
+          <span className="font-body font-bold text-amber-light text-lg leading-none">
             {skill.name[0].toUpperCase()}
           </span>
         )}
 
         {/* Hover overlay — reveals percentage */}
-        <div className="absolute inset-0 rounded-full bg-amber flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+        <div className="absolute inset-0 rounded-full bg-amber/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200">
           <span className="text-white font-body font-bold text-sm leading-none">
             {skill.percent}%
           </span>
@@ -147,7 +147,7 @@ function SkillCard({
       </div>
 
       {/* Skill name */}
-      <p className="font-body text-xs text-bark text-center leading-tight max-w-[72px]">
+      <p className="font-body text-xs text-white/60 text-center leading-tight max-w-[72px]">
         {skill.name}
       </p>
     </motion.div>
@@ -160,13 +160,20 @@ export default function Skills() {
   const isInView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="skills" className="py-24 bg-cream">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
+    <section id="skills" className="py-24 relative overflow-hidden bg-charcoal">
+      {/* Gradient transition from About section above */}
+      <div className="absolute top-0 left-0 right-0 h-28 bg-gradient-to-b from-sand to-transparent pointer-events-none" />
+      {/* Ambient blobs */}
+      <div className="absolute -top-20 -left-20 w-96 h-96 bg-amber rounded-full blur-3xl opacity-10 pointer-events-none" />
+      <div className="absolute top-1/3 right-0 w-80 h-80 bg-forest rounded-full blur-3xl opacity-10 pointer-events-none" />
+      <div className="absolute bottom-0 left-1/3 w-72 h-72 bg-amber-light rounded-full blur-3xl opacity-10 pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10" ref={ref}>
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
-          className="font-display font-bold text-4xl text-charcoal mb-16 text-center"
+          className="font-display font-bold text-4xl text-cream mb-16 text-center"
         >
           {t('skills.heading')}
         </motion.h2>
@@ -178,9 +185,9 @@ export default function Skills() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.6, delay: catIndex * 0.07 }}
-              className="bg-sand rounded-card p-6 border border-border"
+              className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6 hover:border-amber/30 hover:bg-white/10 transition-all duration-300"
             >
-              <h3 className="font-body font-semibold text-charcoal text-sm uppercase tracking-wider mb-4">
+              <h3 className="font-body font-semibold text-amber-light text-sm uppercase tracking-wider mb-4">
                 {t(key)}
               </h3>
               <div className="grid grid-cols-3 sm:grid-cols-4 gap-4">

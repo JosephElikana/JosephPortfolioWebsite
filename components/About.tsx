@@ -15,8 +15,10 @@ export default function About() {
   }
 
   return (
-    <section id="about" className="py-24 bg-sand">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
+    <section id="about" className="py-24 bg-sand relative overflow-hidden">
+      {/* Gradient transition into dark sections below */}
+      <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-b from-transparent to-charcoal pointer-events-none" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10" ref={ref}>
         <motion.h2
           variants={variants}
           initial="hidden"
@@ -41,7 +43,7 @@ export default function About() {
                 <span className="font-display font-bold text-7xl text-amber">JE</span>
               </div>
               {/* Decorative ring */}
-              <div className="absolute -inset-3 rounded-full border-2" style={{ borderColor: 'rgba(200, 135, 58, 0.20)' }} />
+              <div className="absolute -inset-3 rounded-full border-2 border-amber/20" />
             </div>
           </motion.div>
 
@@ -65,7 +67,7 @@ export default function About() {
             <div className="pt-4">
               <a
                 href="#contact"
-                className="inline-block border-2 border-amber text-amber hover:bg-amber hover:text-white font-body font-semibold text-sm px-7 py-3 rounded-full transition-all duration-200 hover:-translate-y-0.5"
+                className="inline-block border-2 border-amber text-amber hover:bg-amber hover:text-white font-body font-semibold text-sm px-8 py-3.5 rounded-full transition-all duration-200 hover:-translate-y-0.5"
               >
                 {t('about.letsConnect')}
               </a>

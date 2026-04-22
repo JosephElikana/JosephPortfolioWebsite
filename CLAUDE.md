@@ -221,37 +221,73 @@ Do NOT link directly to Make.com or Relevance AI tool URLs.
 
 ## Current Status
 
-- [x ] Project scaffolded
-- [ x] Tailwind config with custom colors set up
-- [ x] i18next configured with en.json and sw.json
-- [ x] Navbar component built
-- [ x] Hero component built
-- [ x] About component built
-- [x ] Skills component built
-- [ x] Education component built
-- [ x] Experience component built
-- [ x] Projects component built
-- [ x] Certifications component built
-- [ x] Contact component built
-- [ x] Footer component built
-- [x ] Mobile responsiveness checked
-- [x ] Framer Motion animations added to all sections
-- [ x] Bilingual toggle tested (EN/SW)
+- [x] Project scaffolded
+- [x] Tailwind config with custom colors set up
+- [x] i18next configured with en.json and sw.json
+- [x] Navbar component built
+- [x] Hero component built — dark two-column layout with Spotlight SVG + Spline 3D robot (lazy-loaded)
+- [x] About component built
+- [x] Skills component built — **upgraded to circular icon cards with hover-reveal % overlay** (see session notes below)
+- [x] Education component built
+- [x] Experience component built
+- [x] Projects component built
+- [x] Certifications component built
+- [x] Contact component built
+- [x] Footer component built
+- [x] Mobile responsiveness checked
+- [x] Framer Motion animations added to all sections
+- [x] Bilingual toggle tested (EN/SW)
+- [x] Glassmorphism applied to Skills, Education, Experience, Projects, Certifications
+- [x] Design consistency normalised across all components (fonts, spacing, colors, animations, inline styles removed)
+- [x] Section-to-section gradient transitions added (About→Skills, Certifications→Contact, Contact→Footer)
+- [x] Navbar updated to dark glass — works correctly over all section backgrounds
+- [ ] Contact section custom implementation (user has specific plans)
 - [ ] Deployed to Vercel
 
 Update this checklist as you complete each section.
 
 ---
 
+## Last Session Summary (2026-04-21)
+
+### Session 1 — Skills icon upgrade
+Upgraded the Skills section from plain text badge pills to a polished **circular icon card grid**.
+- Each skill is a **64×64px circle** with the technology logo inside
+- On hover: amber overlay fades in showing the **competence % (e.g. "85%")**
+- Skills without a CDN logo show an **amber letter avatar** as fallback
+- Icons sourced from Devicons CDN and Simple Icons CDN via `<img>` with `onError` fallback
+
+### Session 2 — Glassmorphism across sections
+Applied glassmorphism styling to Skills, Education, Experience, Projects, and Certifications (Contact excluded — user has custom plans for it).
+- All five sections switched to `bg-charcoal` base with `relative overflow-hidden`
+- Large ambient gradient blobs added to each section background (amber + forest, opacity-20/15)
+- Cards upgraded: `bg-white/5 backdrop-blur-xl border border-white/15` with amber hover glow
+- Badge/tag styles use `bg-white/10 border-white/10` glass pill
+
+### Session 3 — Design consistency normalisation
+Audited all components and normalised styling so the page reads as one cohesive design:
+- **Navbar**: switched from cream glass → dark charcoal glass (`bg-charcoal/88 backdrop-blur-md`) on scroll; all link/logo text updated to `text-cream/70` so the navbar looks correct over every section
+- **Footer**: removed all 6 inline `style={{}}` blocks with hardcoded hex/rgba values → proper Tailwind classes (`text-cream/50`, `text-cream/60`, `bg-amber/10`, `border-cream/10`, etc.)
+- **About**: removed inline `borderColor` style → `border-amber/20`; button padding normalised `px-7 py-3` → `px-8 py-3.5` to match Hero; added bottom gradient (`from-transparent to-charcoal`) for smooth transition into Skills
+- **Skills**: added top gradient (`from-sand to-transparent`) to receive the About section fade, creating a seamless sand→charcoal blend
+- **Contact**: icon bg changed from inline `rgba(200,135,58,0.10)` → `bg-amber/20` (matching Education/Experience); entry animations normalised from `x: ±30` → `y: 30` to match all other sections; added top and bottom gradient transitions
+- **Experience**: icon container `p-2` → `p-2.5` to match Education and Contact
+
+### TypeScript
+- Zero TypeScript errors confirmed after all sessions (`npx tsc --noEmit` — clean)
+
+---
+
 ## Notes for Future Sessions
 
+- **Skills icons still needed**: Relevance AI, Prompt Engineering, AI Agent Development, Vibe Coding, Responsive Design, REST APIs, and CS Core skills (Data Structures, Networking, etc.) currently show letter avatars. User will provide actual image files for these when ready — place them in `/public/images/skills/` and update the `icon` field in `SKILL_CATEGORIES` in `Skills.tsx`
 - Profile photo not yet added — placeholder is at `/public/images/placeholder-photo.jpg`
 - Certification years need to be filled in once confirmed
 - University start/graduation years need to be filled in
 - More GitHub project links to be added once repos are ready
 - Social media links (beyond LinkedIn and GitHub) to be added later
 - A contact form backend (e.g. Resend, EmailJS, or Formspree) can be added in a future phase
-- 
+- Hero gradient fades from `hero-bg` (dark) to `sand` at the bottom — this is intentional for visual flow into the About section
 
 
 ## Custom Components & Third-Party Prompts (21st.dev)
@@ -319,3 +355,33 @@ After implementing any component from a prompt, verify:
 - Never ignore TypeScript errors and leave them unresolved
 - Never place a component without checking how it looks next to
   the sections above and below it
+
+
+## Session & Token Management Rules
+
+### General Rules
+- Do not load or read any file unless explicitly asked
+- Do not run any terminal commands unless explicitly asked
+- Do not make assumptions — ask one short question if unsure
+- Complete one task at a time — do not jump ahead to the next task
+- Do not repeat back large chunks of code unless asked
+- When showing code changes, show only the changed section not the full file
+- Always confirm what you are about to do before doing it on large tasks
+
+### Skills — Only Load When Asked
+Skills are stored in /skills folder. Do not read any skill file
+unless the user says "read skills/[filename]" explicitly.
+Available skills:
+- skills/frontend-design.md — UI design rules and aesthetics
+- skills/animation.md — Framer Motion animation patterns
+- skills/bilingual.md — i18next translation rules
+- skills/component-from-prompt.md — 21st.dev component adaptation rules
+
+### MCPs — Only Use When Needed
+Do not call any MCP tool unless the task explicitly requires it.
+Ask before using an MCP if it is not clear whether it is needed.
+
+### Context Window Hygiene
+- At the end of each feature, summarize what was done in 3–5 bullet points
+- If the conversation is getting long, tell the user to open a new session
+- Before ending any session, update the Current Status checklist in CLAUDE.md

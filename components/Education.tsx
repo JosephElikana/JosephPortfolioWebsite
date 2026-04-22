@@ -11,13 +11,17 @@ export default function Education() {
   const isInView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="education" className="py-24 bg-sand">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
+    <section id="education" className="py-24 relative overflow-hidden bg-charcoal">
+      {/* Ambient blobs */}
+      <div className="absolute -top-32 -right-32 w-[500px] h-[500px] bg-amber rounded-full blur-3xl opacity-20 pointer-events-none" />
+      <div className="absolute -bottom-32 -left-32 w-[400px] h-[400px] bg-forest rounded-full blur-3xl opacity-15 pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10" ref={ref}>
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
-          className="font-display font-bold text-4xl text-charcoal mb-16 text-center"
+          className="font-display font-bold text-4xl text-cream mb-16 text-center"
         >
           {t('education.heading')}
         </motion.h2>
@@ -30,24 +34,24 @@ export default function Education() {
             className="relative pl-8 border-l-2 border-amber"
           >
             {/* Timeline dot */}
-            <div className="absolute -left-[9px] top-0 w-4 h-4 bg-amber rounded-full border-2 border-cream" />
+            <div className="absolute -left-[9px] top-0 w-4 h-4 bg-amber rounded-full border-2 border-charcoal" />
 
-            <div className="bg-cream rounded-card p-7 border border-border hover:border-amber/40 transition-all duration-300 hover:shadow-md ml-4">
+            <div className="bg-white/5 backdrop-blur-xl border border-white/15 rounded-xl p-7 hover:border-amber/40 hover:bg-white/10 transition-all duration-300 ml-4">
               <div className="flex items-start gap-4 mb-4">
-                <div className="p-2.5 rounded-lg" style={{ backgroundColor: 'rgba(200, 135, 58, 0.10)' }}>
+                <div className="p-2.5 rounded-lg bg-amber/20">
                   <GraduationCap className="text-amber" size={22} />
                 </div>
                 <div>
-                  <h3 className="font-display font-semibold text-xl text-charcoal">
+                  <h3 className="font-display font-semibold text-xl text-cream">
                     {t('education.degree')}
                   </h3>
-                  <p className="font-body font-medium text-amber text-sm mt-0.5">
+                  <p className="font-body font-medium text-amber-light text-sm mt-0.5">
                     {t('education.institution')}
                   </p>
                 </div>
               </div>
 
-              <div className="flex flex-wrap gap-4 mb-4 text-sm font-body text-muted">
+              <div className="flex flex-wrap gap-4 mb-4 text-sm font-body text-white/50">
                 <div className="flex items-center gap-1.5">
                   <Calendar size={14} />
                   <span>{t('education.period')}</span>
@@ -58,8 +62,8 @@ export default function Education() {
                 </div>
               </div>
 
-              <p className="font-body text-bark text-sm leading-relaxed">
-                <span className="font-semibold text-charcoal">{t('education.highlightsLabel')} </span>
+              <p className="font-body text-white/70 text-sm leading-relaxed">
+                <span className="font-semibold text-cream">{t('education.highlightsLabel')} </span>
                 {t('education.highlights')}
               </p>
             </div>
