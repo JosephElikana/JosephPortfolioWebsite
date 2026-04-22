@@ -112,7 +112,7 @@ export default function Contact() {
                   onClick={() => setSubmitted(false)}
                   className="text-amber font-body text-sm underline hover:text-amber-dark transition-colors duration-200"
                 >
-                  Send another message
+                  {t('contact.sendAnother')}
                 </button>
               </div>
             ) : (

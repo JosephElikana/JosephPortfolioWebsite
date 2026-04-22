@@ -59,7 +59,7 @@ export default function Education() {
               </div>
 
               <p className="font-body text-bark text-sm leading-relaxed">
-                <span className="font-semibold text-charcoal">Highlights: </span>
+                <span className="font-semibold text-charcoal">{t('education.highlightsLabel')} </span>
                 {t('education.highlights')}
               </p>
             </div>

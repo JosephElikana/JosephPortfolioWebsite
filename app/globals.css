@@ -27,8 +27,8 @@ html {
 }
 
 body {
-  background-color: #FAF6F0;
-  color: #2C2416;
+  background-color: var(--color-cream);
+  color: var(--color-charcoal);
   font-family: var(--font-dm-sans), system-ui, sans-serif;
 }
 
@@ -41,10 +41,10 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #EDE6D8;
+  background: var(--color-sand);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #C8873A;
+  background: var(--color-amber);
   border-radius: 3px;
 }

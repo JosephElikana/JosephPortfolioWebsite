@@ -11,8 +11,6 @@ type ExperienceEntry = {
   periodKey: string
   typeKey: string
   detailKeys: string[]
-  typeBadgeStyle: React.CSSProperties
-  typeBadgeClass: string
 }
 
 const ENTRIES: ExperienceEntry[] = [
@@ -22,8 +20,6 @@ const ENTRIES: ExperienceEntry[] = [
     periodKey: 'experience.intern2022Period',
     typeKey: 'experience.internship',
     detailKeys: ['experience.intern2022Detail'],
-    typeBadgeStyle: {},
-    typeBadgeClass: 'bg-amber/10 text-amber border-amber/20',
   },
   {
     roleKey: 'experience.intern2023Role',
@@ -31,8 +27,6 @@ const ENTRIES: ExperienceEntry[] = [
     periodKey: 'experience.intern2023Period',
     typeKey: 'experience.internship',
     detailKeys: ['experience.intern2023Detail'],
-    typeBadgeStyle: {},
-    typeBadgeClass: 'bg-amber/10 text-amber border-amber/20',
   },
   {
     roleKey: 'experience.volunteerRole',
@@ -40,8 +34,6 @@ const ENTRIES: ExperienceEntry[] = [
     periodKey: 'experience.volunteerPeriod',
     typeKey: 'experience.volunteering',
     detailKeys: ['experience.volunteerDetail'],
-    typeBadgeStyle: {},
-    typeBadgeClass: 'bg-forest/10 text-forest border-forest/20',
   },
   {
     roleKey: 'experience.freelanceRole',
@@ -53,8 +45,6 @@ const ENTRIES: ExperienceEntry[] = [
       'experience.freelanceDetail2',
       'experience.freelanceDetail3',
     ],
-    typeBadgeStyle: {},
-    typeBadgeClass: 'bg-charcoal/10 text-charcoal border-charcoal/20',
   },
 ]
 
@@ -86,7 +76,7 @@ export default function Experience() {
                 className="relative"
               >
                 {/* Timeline dot */}
-                <div className="absolute -left-[41px] top-5 w-4 h-4 bg-amber rounded-full border-2 border-cream" />
+                <div className="absolute -left-[9px] top-5 w-4 h-4 bg-amber rounded-full border-2 border-cream" />
 
                 <div className="bg-sand rounded-card p-6 border border-border hover:border-amber transition-all duration-300 hover:shadow-md ml-4">
                   <div className="flex items-start justify-between gap-4 flex-wrap mb-3">

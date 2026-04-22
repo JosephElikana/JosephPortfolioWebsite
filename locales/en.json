@@ -40,7 +40,8 @@
     "institution": "Mwenge Catholic University (MoCU)",
     "location": "Moshi, Tanzania",
     "period": "20XX – 20XX",
-    "highlights": "Computer Science fundamentals, Software Engineering, Networking, AI & Machine Learning, Database Systems, Final Year Project"
+    "highlights": "Computer Science fundamentals, Software Engineering, Networking, AI & Machine Learning, Database Systems, Final Year Project",
+    "highlightsLabel": "Highlights:"
   },
   "experience": {
     "heading": "Experience",
@@ -129,7 +130,8 @@
     "success": "Thank you! Your message has been received. I'll get back to you soon.",
     "nameLabel": "Name",
     "emailFieldLabel": "Email",
-    "messageLabel": "Message"
+    "messageLabel": "Message",
+    "sendAnother": "Send another message"
   },
   "footer": {
     "copyright": "© 2025 Joseph Elikana. All rights reserved.",

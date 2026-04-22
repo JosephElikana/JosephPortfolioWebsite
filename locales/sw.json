@@ -40,7 +40,8 @@
     "institution": "Chuo Kikuu Katoliki cha Mwenge (MoCU)",
     "location": "Moshi, Tanzania",
     "period": "20XX – 20XX",
-    "highlights": "Misingi ya Sayansi ya Kompyuta, Uhandisi wa Programu, Mitandao, AI na Ujifunzaji wa Mashine, Mifumo ya Hifadhidata, Mradi wa Mwaka wa Mwisho"
+    "highlights": "Misingi ya Sayansi ya Kompyuta, Uhandisi wa Programu, Mitandao, AI na Ujifunzaji wa Mashine, Mifumo ya Hifadhidata, Mradi wa Mwaka wa Mwisho",
+    "highlightsLabel": "Mambo Muhimu:"
   },
   "experience": {
     "heading": "Uzoefu",
@@ -112,8 +113,8 @@
   },
   "certifications": {
     "heading": "Vyeti",
-    "cert1Title": "AI kwa Wanaoanza",
-    "cert2Title": "AI kwa Wataalamu wa Biashara",
+    "cert1Title": "AI for Beginners",
+    "cert2Title": "AI for Business Professionals",
     "issuer": "HP Foundation",
     "year": "Mwaka TBC"
   },
@@ -129,7 +130,8 @@
     "success": "Asante! Ujumbe wako umepokelewa. Nitawasiliana nawe hivi karibuni.",
     "nameLabel": "Jina",
     "emailFieldLabel": "Barua Pepe",
-    "messageLabel": "Ujumbe"
+    "messageLabel": "Ujumbe",
+    "sendAnother": "Tuma ujumbe mwingine"
   },
   "footer": {
     "copyright": "© 2025 Joseph Elikana. Haki zote zimehifadhiwa.",
